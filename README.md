@@ -1,7 +1,7 @@
 # LCC
 
 ![GitHub Logo](2.png)
-Format: ![Alt Text](url)
+
 
 Aqui encontra-se todo o material necessário para completares o curso.
 
