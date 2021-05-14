@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "redir.c": "cpp",
+        "string.h": "c"
+    }
+}

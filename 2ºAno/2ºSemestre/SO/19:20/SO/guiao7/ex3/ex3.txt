@@ -1,0 +1,36 @@
+void matatodos() {
+    for( todos os filhos )
+        kill(pid[i], SIGTERM);
+}
+ 
+int main(int argc, char* argv[]) {
+    // argv[1]: palavra
+    // argv[i], 2  <= i < argc: ficheiros
+ 
+    int encontrou = 0;
+ 
+    for(i=0;  ... ) {
+ 
+        if ((pid[i]=fork())==0) {
+ 
+            // executar o grep para um dos ficheiros
+            // exec...(...), etc
+        }
+    }
+ 
+    signal(SIGALRM, matatodos);
+    alarm(10);
+ 
+    for( ... ) {
+        wait(&status);
+        if (WIFEXITED(status) && WEXITSTATUS(status)==0) {
+            encontrou = 1;
+ 
+            matatodos();
+        }
+    }
+ 
+    if (encontrou) {
+        printf("Encontrou!\n");
+    }
+}
