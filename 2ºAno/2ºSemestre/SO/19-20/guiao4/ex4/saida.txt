@@ -1,6 +1,0 @@
-total 48
--rw-r--r--  1 ricascross  staff      0  1 Apr 12:36 entrada.txt
--rw-r--r--  1 ricascross  staff   1046  1 Apr 15:41 ex4.c
-drwxr-xr-x  3 ricascross  staff     96  1 Apr 12:16 ex4.dSYM
--rwxr-xr-x  1 ricascross  staff  13032  1 Apr 15:41 redir
--rw-r--r--  1 ricascross  staff      6  1 Apr 15:30 saida.txt

@@ -1,5 +1,0 @@
-< - altera o input
-> - altera o output
->> - append 
-2> - stderr 
-2>> - append to file
