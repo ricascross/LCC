@@ -1,0 +1,12 @@
+total 48
+-rw-r--r--  1 ricascross  staff     32  2 Jul 17:39 error.txt
+-rw-r--r--  1 ricascross  staff      0  2 Jul 17:39 input.txt
+-rw-r--r--  1 ricascross  staff      0  2 Jul 17:39 output.txt
+-rwxr-xr-x  1 ricascross  staff  13272  2 Jul 17:41 redir
+-rw-r--r--  1 ricascross  staff   1426  2 Jul 17:41 redir.c
+total 48
+-rw-r--r--  1 ricascross  staff     32  2 Jul 17:39 error.txt
+-rw-r--r--  1 ricascross  staff      0  2 Jul 17:39 input.txt
+-rw-r--r--  1 ricascross  staff      0  2 Jul 17:39 output.txt
+-rwxr-xr-x  1 ricascross  staff  13272  2 Jul 17:41 redir
+-rw-r--r--  1 ricascross  staff   1426  2 Jul 17:41 redir.c
