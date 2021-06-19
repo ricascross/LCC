@@ -1,0 +1,50 @@
+Teoria para saber raizes primitivas:
+Def:
+
+a \in Z_n^*. O menor x tal que a^x \equiv 1 mod n é chamado ordem a módulo n.
+Ex:
+ord_7 2 = 3 <=> 2^3 \equiv 1 mod n; ord_7 3 <=> 3^6 \equiv 1 mod 7 
+
+Teorema:
+
+a \in Z_n^*. a^x \equiv 1 mod n <=> ord_n a | x 
+
+Corolario:
+
+a \in Z_n^*. Então ord_n a | \phi(n)
+
+lagrange: ord_n a | \phi(n)
+
+Exemplo:
+
+ord_17 5 \in {1,2,2^2,2^3,2^4} , \phi(17) = 16 (17-1)
+
+Teorema:
+
+a^i \equiv a^j mod n <=> i \equiv j mod ord_n a
+
+
+Teorema Euler:
+
+a^\phi(n) \equiv 1 mod n, onde a, ord_n a é o menor k tal que a^k \equiv 1 mod n.
+
+Ex: 
+ord_7 2 = 3 porque 2^3 \equiv 1 mod 7 e 2^1, 2^2\equiv 1 mod 7.
+
+Corolário:
+ord_n a | \phi(n)
+
+Ex:
+n = 15; 
+\phi(15) = \phi(3 * 5) = \phi(3)\(5) = 2 * 4 = 8.
+
+ord_15 2 \in {1,2,4,8} divisores de \phi(8)
+
+2^4 \equiv 1 mod 15
+2^1, 2^2 \notequiv mod 15 
+
+} => ord_15 2 = 4 
+
+<2> = {2^1, 2^2, 2^3, ..., 2^8} = {2^1, 2^2, 2^3, 1=2^4} \contido Z_15^*
+
+2^5 = 2^4(=1) * 1 = 2

@@ -1,0 +1,62 @@
+a \equiv b mod n se n | (a-b)
+
+Teorema:
+Seja a,b,c \in Z, n \in n
+
+1) a \equiv b mod n 
+    1.1) a + c \equiv b+c mod n
+    1.2) ac \equiv bc mod n
+
+2) ac \equiv bc mod n => a \equiv b mod (n / (mdc (n, c)))
+
+3) ac \equiv bc mod n e mdc(c,n) = 1 => a \equiv b mod n 
+
+4) a \equiv b mod n e c \equiv d mod n 
+    4.1) a+c \equiv b+d mod n
+    4.2) ac \equiv bc mod n
+
+5) a \equiv b mod n => a^k \equiv b^k mod n 
+
+6)
+    6.1) a \equiv b mod n1
+    6.2) a \equiv b mod n2
+    ...
+    6.n) a \equiv b mod n_k
+
+    => a \equiv b mod [n1, n2, ..., n_k] (mmc)
+
+
+
+Teorema:
+Sejam a,b \in Z, n \in N mdc(a,n) = d
+
+ax \equiv b mod n tem solução sse d | b.
+
+
+Nota: o nº de soluções incongruentes mod n é d = mdc(a,n)
+
+Se x0 é solução de ax \equiv b mod n então as soluções inteiras são da forma 
+
+    x = x0 + n/(mdc(a,n)) t, t \in Z
+
+
+Ex:
+
+9x \equiv 12 mod 15 tem solução porque mdc(9,15) = 3 | 12.
+
+tem três soluções incongruentes em Z_15.
+
+9x \equiv 12 mod 15 => 3.3x \equiv 3.4 mod 15
+
+=> 3x \equiv 4 mod 15/mdc(3,15) => 3x \equiv 4 mod 5
+
+x2=>  6x \equiv 8 mod 5 
+
+6 em Z5 = 1 e 8 em Z5 = 3 => x \quiv 3 mod 5
+
+Soluções em Z_15: 3, 8, 13.
+
+
+Teorema:
+Seja p primo. a^2 \equiv 1 mod p (i.e a^-1 = a)
+Então a \equiv 1 mod p ou a \equiv mod p.

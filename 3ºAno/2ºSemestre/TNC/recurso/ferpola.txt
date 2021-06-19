@@ -1,0 +1,52 @@
+PERGUNTA:
+
+Considere o produto de dois primos distintos n=161. 
+
+a) Use a fatorizacao de fermat para encontrar p primo tal que p|n.
+
+b) Use o algoritmo (p-1)-pollard para encontrar um divisor nao trivial de n.
+    Sabe-se que mdc(63,n) = 7
+
+c) Fatorize 143 usando o algoritmo p-pollard, usando a sequencia pseudo-aleatoria
+dada por x_0=2 e gerada da forma usual por f(x)=x^2 + 1.
+Sabe-se que mdc(21,n) = 1 e que mdc(132, 143) = 11
+
+
+RESPOSTA:
+
+    a) 
+        n = 161
+        s = parteinteira sqrt(161) = 13
+        s^2-n = 8 como 8 nao e quadrado perfeito entao
+
+        s=s+1 = 14
+        s^2-n = 35 como 35 nao e quadrado perfeito entao
+
+        s=s+1 = 15
+        s^2-n = 64 = 8^2, 64 e um quadrado perfeito, logo t=8
+
+        n=(s^2 -t^2) = (s+t)(s-t) = (15+8)(15-8)=23*7
+
+    b)
+        2^k! mod 161, k = 1,2..
+
+        r_1 = 2^1! mod 161 = 2 mod 161, mdc(1,161) = 1
+        r_3 = 2^2! mod 161 = 4 mod 161, mdc(3,161) = 1
+        r_1 = 2^3! mod 161 = 64 mod 161, mdc(63,161) = 7
+
+        Logo o fator nao trivial e 7.
+
+    c)
+        f(x) = x^2 +1 
+        x_0 = 2
+
+        x_1 = f(x_0) = 5 mod 143
+        x_2 = f(x_1) = 26 mod 143
+        x_3 = f(x_2) = 105 mod 143
+        x_4 = f(x_3) = 15 mod 143
+
+        mdc(x_2 - x_1, n) = 1
+        mdc(x_4 - x_2, n) = 11
+
+        logo, 11 e o fator nao trivial de 143.
+        

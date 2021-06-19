@@ -1,0 +1,48 @@
+Teorema:
+
+pspf de base b se b^n \equiv b mas n é composto.
+
+o mais pequeno pspf base 2 é 341.
+
+mdc(b,n) = 1 então b^n\equiv mod n <=> b^n-1 \equiv 1 mod n.
+
+
+Lema:
+
+d | n então (2^d -1) | (2^n - 1)
+
+
+Dem. Teorema:
+
+Provar que existe uma infinidade de pspf base 2.
+
+n é pspf de base 2 etnão m = 2^n -1 é pspf base 2.
+
+n é pspf de base 2 => n é composto => 2^n-1 \equiv 1 mod n 
+
+n = d*t, 1 < d,t < n
+
+d|n => (2^d - 1) | (2^n -1). Logo m = 2^n -1 é composto.
+
+Falta mostrar que 2^m-1 \equiv 1 mod m, m = 2^n-1 - 1.
+
+s^m-1 =  2^(2^n)-1-1 = 2^(2^n)-1-2 = 2^nk
+
+n | nk,
+
+Então pelo lema, m = (2^n-1) | (2^nk -1 ) = 2^m-1 - 1
+
+Logo, m | (2^m-1 - 1) => 2^m-1 - 1 \equiv 0 mod m => 2^m-1 \equiv 1 mod m 
+
+n pspf base 2 => 2^n - 1 pspf base 2
+
+2^n -1 > n 
+
+341 é pspf base 2, 2^341 - 1 pspf base 2.
+
+2^2^341 -1 pspf base 2.
+
+
+
+Seja n, mdc(a,n) =  1 tq a^n-1 \equiv 1 mod n mas n é composto. Logo n é pspf de base a.
+

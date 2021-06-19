@@ -1,0 +1,32 @@
+QUESTAO:
+Mostre que se p e um primo impar entao
+
+(-1/p) 
+= 1 se p \equiv 1 (mod 4)
+ou
+= -1 se p \equiv 3 (mod 4)
+
+RESPOSTA:
+
+Criterio de Euler
+
+(-1/p) = (-1)^{(p-1)/2} (mod p)
+
+
+p primo impar 
+=>
+p \equi +- 1 (mod 4)
+
+Sup. p \equiv -1 (mod 4)
+=>
+p \equiv 3 (mod 4)
+=>
+p \equiv 4k+3 para algum k
+=>
+(-1)^{(p-1)/2}
+= (-1)^{(4k+2)/2}
+= (-1)^{2k + 1}
+= -1
+
+
+Logo (-1/p) = -1

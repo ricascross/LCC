@@ -1,0 +1,32 @@
+Seja n ímpar. (Se n é par pode-se dividir sempre por 2)
+
+n = p1 em que p e q são números primos.
+
+Suponhamos n = ab (sem perdas de generalidade) a <= b e a,b ímpares
+
+Seja s = (a+b)/2 pois como a+b são ímpares, dá um par
+
+t = b-a/2 pois b é menor que a 
+
+s^2 - t^2 = (s + t)(s-t) = ((a + b) / 2 + (b - 2)/2)(a+b/2) = ba = n
+n = s^2 => t^2 = s^2 - n 
+
+OBJETIVO: Procurarmos quadrados perfeitos de forma x^2 - n.
+
+Ex:
+
+n = 13 . 29 = 377
+
+s = (arredondamento por cima) sqrt(n) = 20, isto porque 19^2 = 361 < 377 < 400 = 20^2
+
+s^2 -n = 400 - 377 = 23
+
+Como 23 não é um quadrado perfeito então
+
+s <- s + 1  -> é eficiente neste passo, ou seja, a eficiência do algoritmo é a quantidade de vezes que se faz este passo 
+
+s = 21
+
+s^2 -n = 64 = 8^2   t = 8
+
+n = s^2 - t^2 = (s+t)(s-t) = 29 . 13

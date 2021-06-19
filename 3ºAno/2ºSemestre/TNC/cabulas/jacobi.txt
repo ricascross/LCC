@@ -1,0 +1,55 @@
+Ao contrário do legendre, o jacobi não é obrigatório que o "denominador" seja primo, i.e, pode ser composto.
+
+Seja n ímpar; n = produtorio p_i^(\alpha_i) fatorização em potências de primos diferentes, mdc(a,n) = 1.
+Definimos (a/n) = produtorio de i até k (a/p_i)^\alpha_i
+
+
+NOTA: (a,n) NÃO NOS INFORMA SE X^2 \EQUIV A MOD N TEM SOLUÇÃO!!!!!!!
+
+Ex:
+
+(6/35) =mdc(6,35) = 1= (5/5*7) = def = (6/5)(6/7) =6\equiv1mod5= (1/5)(-1/7) = 1*-1 = -1.
+
+Teorema:
+Seja n ímpar, mdc(a,n) = 1 = mdc(b,n). Então.
+
+1) a \equiv b mod n => (a/n)(b/n)
+2) (a*b/n) = (a/n)(b/n)
+
+Dem:
+Consideremos n = produtorio p_i^(\alpha_i)
+
+mdc(a,n) = 1 => mdc(a, p_i) = 1 => p_i \notdivide a 
+mdc(b,n) = 1 => mdc(ab, p_i) = 1 => p_i \notdivide b
+
+1) p | n; a \equiv b mod n => b-a \equiv 0 mod n 
+=>b-a = k*n =p|n e n= p*x=> b-a = (k*x)*p => p | (b-a) => b \equiv a mod p.
+
+a\equiv b mod n, n = produtorio p_i^(\alpha_i) então a\equiv b mod p_i => (a/p_i) = (b/p_i)
+(a/n) = produtorio (a/p_i)^(\alpha_i) = (b/p_i)^(\alpha_i) = (b/n)
+
+2) (a*b/n)=produtorio (a*b/p_i)^(\alpha_i) = sabemos que (a*b/p_i) = (a/p_i)*(b/p_i)
+=(\produtorio (a/p_i)^(\alpha_i))*(\produtorio (b/p_i)^(\alpha_i)) = (a/n)(b/n).
+
+
+LEI DA RECIPROCIDADE QUADRATICA(P/A SIMBOLO JACOBI)
+
+Sejam m,n IMPARES(), mdc(m,n) = 1. 
+(m/n) = (-1)^(m-1/2)*(n-1/2) (n/m)
+
+EX:
+(22/35) = (2*11/35) = (2/35)(11/35) = -1*1=-1
+(2/35) = (2/5*7) = (2/5)(2/7) = -1*1 = -1
+(11/35)=lrq=(-1)^(11-1/2)*(35*1/2) (35/11) = -(35/11) = -(-1)=1
+
+
+Propriedades:
+(-1/p) = 
+    . 1 se p \equiv 1 mod 4
+    . -1 se p \equiv -1 mod 4
+
+(2/p) = (-1)^((p^2)-1)/8
+    . 1 se p \equiv +- 1 mod 8
+    . -1 se p \equiv +- 3 mod 8
+
+Fazer a demonstração

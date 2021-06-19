@@ -1,0 +1,12 @@
+x^n-1 \equiv 1 mod n e x^((n-1)/q) \notequiv 1 mod n, para todo o fator primo q de n-1. então n é primo.
+
+Dem:
+Supondo x^n-1 \equiv 1 mod n
+Então ord_n x | (n-1)
+Vamos mostrar que ord_n x = n-1
+Supondo ord_n x =/= n-1
+Logo ord_n x | (n-1)  e ord_n x =/= -1 e, portanto n-1 = k*ord_n x, k> 1
+Seja q um fator primo qq de n-q, x^((n-1)/q) = x^(k*ord_n x/q) = (x^ord_n x)^(k/4) => (1) \equiv 1 mod n
+Logo ord_n x = n-1
+
+n-1 = ord_n x <= \phi(n) <= n-1 => \phi(n) = n-1 => n é primo.

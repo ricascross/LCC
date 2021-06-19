@@ -1,0 +1,51 @@
+Seja n ímpar, seja 1 < b < n em que b tal que mdc(b,n) = 1
+
+b^n-1 \equiv 1 mod n
+
+x := b^(n-1/2) mod n
+
+
+Definicao teste Miller:
+
+Seja nímpar. n-1(par) = 2^s * t, em que o
+
+s \in N e s = nº de divisoes por 2
+t ímpar e t = fator
+
+mdc(b,n) = 1
+
+ - n passa o teste de Miller para o base b se:
+
+b^t \equiv 1 mod n ou b^(2^j)*t \equiv -1 mod n para algum 0 <= j <= s-1.
+
+
+Ex:
+
+n = 2047 = 23 * 89
+
+2^2046 = (2^11)^186 = (2048)^186 \equiv 1 mod 2047
+
+i.e, n é pspf base 2
+
+n-1 = 2046 = (nº de divisoes)2^1 * 1023
+
+s = 1, t = 1023
+
+Seja b = 2,
+
+b^t = 2^1023 = (2^11)^93 = (2048)^93 \equiv 1 mod 2047
+
+.;. n passa o teste de Miller na base 2 (n é pspF base 2)
+
+
+
+Teorema:
+
+Seja n=/= 2, b \in N tal que mdc(b,n) = 1.
+
+Então n passa o teste de Miller na base b (i.2, o teste de Miller é um teste de primalidade)
+
+Nota:
+
+Se n passa o teste de Miller de base b então n 
+passa o teste de primalidade fraca de b (i.e, b^n-1 \equiv 1 mod n)

@@ -1,0 +1,21 @@
+Existe uma infinidade de nos de carmichael. O mais pequno é n=561 = 3*11*17.
+
+Para mostrar que n é número de carmichael :
+
+n é composto
+b^n-1 \equiv 1 mod n, para todo b, mdc(b, 561) = 1.
+
+mdc(b,561) = 1 => 
+
+mdc(b,3) = 1  b^2 \equiv 1 mod 3
+mdc(b,11) = 1  b^10 \equiv 1 mod 11
+mdc(b,16) = 1  b^16 \equiv 1 mod 17
+
+
+queeremos mostrar b^560 \equiv 1 mod 561 para todo b, tq mdc(b, 561) = 1
+
+b^560 = (b^2)^280 \equiv 1 mod 3
+b^560 = (b^10)^56 \equiv 1 mod 11
+b^560 = (b^16)^35 \equiv 1 mod 17
+
+=> b^560 \equiv 1 mod mmc(3,11,17) = 561

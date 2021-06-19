@@ -1,0 +1,18 @@
+PERGUNTA:
+
+    Sabendo que 101 e um primo, mostre que nao existem solucoes para a congruencia 
+    x^2 \equiv 90 mod 101.
+
+RESPOSTA:
+
+    x^2 \equiv 101 tem solucao sse (90/101) = 1.
+
+    (90/101) =90composto=> (2*3*3*5/101) 
+    =homo=> (2/101)(3/101)(3/101)(5/101) = -1 * -1 * -1 * 1 = 1
+
+
+    . (3/101) =LRQ=> (-1)^(3-1/2)(101-1/2) (101/3) = (101/3) =101\equiv2mod3=> -1
+    
+    . (5/101) =LRQ=> (-1)^(5-1/2)(101-1/2) (101/5) = (101/5) =101\equiv1mod5=> 1
+
+    Logo, (90/101) = -1 e x^2 \equiv 90 mod 101 nao tem solucoes.

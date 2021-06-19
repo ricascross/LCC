@@ -1,0 +1,51 @@
+TEOREMA:
+
+(2/p) = (-1)^(p^2-1/8) = 
+    . 1 se p \equiv +- 1 mod 8
+    . -1 se p \equiv +-3 mod 8
+
+DEM:
+
+Seja s o numero de residuos em Zp obtidos de
+
+1*2,2*2,3*2,...,(p-1/2)*2
+
+que sao < p/2. Pelo lema de gauss,
+
+(2/p) = (-1)^s 
+
+Seja 1 <= k <= p-1/2
+
+2k < p/2 sse k < p/4.
+
+Nota: 1*2,2*2,3*2,...,(p-1/2)*2 igualam os seu residuos
+
+Logo, parteinteira (p/4) dos inteiros 1*2,2*2,3*2,...,(p-1/2)*2 sao < p/2.
+
+ha s=p-1/2(residuos) - parteinteira (p/4) que sao > p/2
+
+Aplicando o lema de gauss, (2/p) = (-1)^s = (-1)^(p-1/2)-parteinteira(p/4)
+Basta mostrar que p^2-1/8 \equiv (p-1)/2 - parteinteira (p/4) mod 2 (tem a mesma paridade)
+
+. p\equiv1 mod 8, i.e p = 8k+1
+    p-1/2 - parteinteira(p/4) = 4k-parteinteira(8*k+1/4)
+    =4k-parteinteira(2k+(1/4)) = 4k -2k \equiv 0 mod 2
+
+    p^2-1/8 = (8k+1)^2-1/8 = (64k^2+16k)/8 \equiv 0 mod 2
+
+
+
+. p\equiv 3 mod 8, i.e p = 8k+3
+    p-1/2 - parteinteira(p/4) = 4k+1-parteinteira(2*k+3/4)
+    =2k-1  \equiv 1 mod 2
+
+    p^2-1/8 = (64k^2+8*6k+8)/8 = (8k^2+6k)+1 = 2(4k^2 + 3k)+1 \equiv 1 mod 2
+
+. p \equiv 4 mod 8
+
+
+. p\equiv7 mod 8, i.e p = 8k+7
+    p-1/2 - parteinteira(p/4) = 4k+3-parteinteira(8*k+7/4)
+    =4k+3-parteinteira(2k+(7/4)) = 4k +3 -(2k+1) = 2k+2 \equiv 0 mod 2
+
+    p^2-1/8 = ...

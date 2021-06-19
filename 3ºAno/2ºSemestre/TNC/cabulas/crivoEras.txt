@@ -1,0 +1,34 @@
+Suponhamos n composto então n=bc 1<b<=c<n
+
+b^2=b.b <= bc = n => b <= sqrt(n) => b <= parte interia sqrt(n)
+
+Existe p primo tal qur p | b p<=b<=parte interia sqrt(n) como p|b e b|n = p|n
+
+Se n é composto então existe p primo p|n e p<=parte interia sqrt(n)
+Testar a divisibilidade de n pelos primos p tq p<=parte interia sqrt(n)
+
+Ex:
+
+n = 531
+
+529 = 23^2 <= 531 <= 24^2 = 576 (Se nenhum primo dividir 531 então 531 é primo)
+
+=> 23 <= sqrt(531) <= 24
+
+parte interia sqrt(531) = 23 logo só temos de percorrer a divisibilidade para p <= 23.
+
+
+COMO DEFINIR O CRIVO:
+
+1) Criar a lista 1,..,n
+
+2) p_i primos 2 <= p_i <=  parte interia sqrt(n), removem-se da lista os múltiplos de p_i, isto é, no caso de {2,3,5,7,...} 
+remove-se os múltiplos de 2, seguido de 3, 5,7,...
+p_i < kp_i <= n em que 1 < k <= parte interia n/p_i
+
+3) os inteiros da lista que não foram removidos são os primos que estão entre 2 < p <= n 
+
+Ex:
+n = 101 é primo?
+
+p | n com p \in {2,3,5,7} pois parte interia sqrt(101) = 10, logo p <= 10

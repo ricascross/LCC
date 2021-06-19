@@ -1,0 +1,154 @@
+Seja r raiz primitica de n i.e Zn^*=<r>
+
+Então r^x \equiv r^y mod n <=> x \equiv y mod \phi(n).
+
+Teorema:
+r \in Zn*, r raiz primitiva de n. Então {r^1, r^2, ..., r^\phi(n)} s.r.r
+
+Dem:
+mdc(r,n) = 1 => mdc(r^j, n) = 1
+
+Supondo rî \equiv r^j mod n. Então i \equiv j mod \phi(n) =(i <= i,j <= \phi(n))=> i = j
+
+
+Teorema:
+a \in Zn^*, t = ord_n a, u \in N. Então ord_n a^u = t/(mdc(t,u))
+
+
+Ex:
+ord_7 3 = 6 => ord_7 3^4 = 6/(mdc(6,4)) = 3.
+
+Corolario:
+
+Seja r a raiz primitica de n, Então rû é raiz primitiva de n sse mdc(u, \phi(n)) = 1
+
+
+Teorema:
+Se n tem uma raiz primitica então tem \phi(\phi(n)) raizes primitivas distintas.
+
+
+Teorema: 
+
+Todo o primo tem uma raiz primitiva.
+
+Ex:
+
+3 r.p de 7 i.e, <3> = Z_7^*
+
+\exists_x (1<=x<=\phi(7) = 6): 5 \equiv 3^x, x é indice_3 5 mod 7, x = ind_3 5 mod 7; x = log_3 5 mod 7.
+
+
+Def:
+
+r é r.p  de n, a \in Z_n^* = <r> = {r^1, r^2, ..., r\phi(n)}
+Então, \exists unico x, 1 <=x <= \phi(n) tq , r^x \equiv a mod n.
+
+x= ind_r a = log_r a
+
+Encontrar x <------> resolver o problema do logaritmo discreto.
+
+r raiz primitica de n, a\inZn^* = <r>, r^ind_r a \equiv(def indice) a mod n
+
+
+
+Teorema:
+r raiz primitiva de n, a,b \in <r> = Zn^*
+    1) ind_r 1 \equiv 0 mod \phi(n)
+    2) ind_r (ab) \equiv ind_r (a) + ind_r (b) mod \phi(n)
+    3) ind_r (a^k) \equiv k*ind_r a mod \phi(n), k \in N 
+
+
+Ex:
+. n = 8
+
+Z_8^* =2^3 fatores primos sem o 2= {1,3,5,7}  O(Z_8^*) = \phi(8) = \phi(2^3) = 2^3 - 2^2 = 4.
+
+ord_8 1 = 1
+
+ord_8 3 \in {1,2,4}, 3^1 =/= 1; 3^2 \equiv 1 mod 8, ord_8 3 = 2
+
+ord_8 5 \in {1,2,4}, 5^1 =/= 1; 5^2 \equiv 1 mod 8, ord_8 5 = 2
+
+7 \equiv -1 mod 8, (-1)^2 \equiv 1 mod 8 => 7^2 \equiv mod 8
+ord_8 7 = 2
+
+para todo a \in Z_8^*, ord_8 a =/= \phi(8) = 4
+\notexists r \in Z_8^* = <r> 
+Z_8^*  não é um grupo cíclico.
+
+
+
+
+. n = 9
+O(Z_9^*) = \phi(9) = \phi(3^2) = 3^2-3^1 = 6.
+
+Z_9^* = {1,2,4,5,6,8}
+
+ord_9 2 \in {1,2,3,6} - dividem \phi(9) = 6
+
+2^1 \notequiv 1; 2^2 \notequiv 1; 2^3 \notequiv 1 => ord_9 2 = 6 
+
+2^\phi(9) \equiv 1 mod n, pelo teorema de euler.
+
+Z_9^* = <2> = {2^1, 2^2, 2^3, 2^5, 2^6=1}
+
+
+Teorema:
+
+n \in N. n tem raiz primitica 
+(i.e \exists_r \in Z_n^* : Z_n^* = <r>)
+(i.e \exists_r \in Z_n^* : ord_n r = \phi(n))
+
+sse n = 2, n = 4, n = p^k, n = 2*p^k para um primo ímpar-
+
+
+Corolário:
+
+Todo o primo tem raíz primitiva.
+
+Ex:
+
+Z_9^* = <2>
+
+5 \in Z_9^* \exists_k (1 <= k <= \phi(9)) : 5 \equiv 2^k mod 9
+
+em que o k é o índice de 5 na base 2 mod 9. 
+
+ind_2 5; log_2 5
+
+
+Definicao:
+
+r raiz primitiva de n, i.e, Z_n^* = <r>, i.e \phi(n) = ord_n r 
+
+a \in Z_n^*, \exists (1<=k<=\phi(n)) : a = r^k mod n.
+
+k é o índice, k = ind_r a; k = log_r ab
+
+
+Ex1:
+6x^12 = 11 mod 17, 3 é a raiz primitiva de 17, ord_17 3 = \phi(17) = 16
+
+6x^12 = 11 mod 17 => ind_3 (6x^12) \equiv ind_3 11 mod 16 (\phi(17))
+=>ind_3 6 + 12 ind_3 x \equiv ind_3 11 mod 16
+Sabe-se que ind_3 6 = 15(i.e 3^15 |equiv 6 mod 17) e ind_3 11 = 7 (i.e (3^7) \equiv mod 17)
+=> 15 +12ind_3 x \equiv 7 mod 16 
+=> 12ind_3 x \equiv -8 mod 16 
+=dividirpor4mod17=> 3ind_3 x \equiv 2 mod 4
+=>ind_3 x \equiv 2 mod4 
+=> ind_3 x \equiv 2,6,10,14 mod 16 
+=> x \equiv 3^2, 3^6, 3^10, 3^14
+
+
+Ex2:
+
+7^x \equiv 6 mod 17, 3 é r.p de 17
+=> ind_3 7^x \equic ind_3 6 mod 16 (\phi (17))
+=> x * ind_3 7 \equiv 15 mod 16
+Sabe-se que ind_3 6 = 15(i.e 3^15 |equiv 6 mod 17) e ind_3 11 = 7 (i.e (3^7) \equiv mod 17)
+=> 11 *x  \equiv 15 mod 16
+Sabes-se que 33 \equiv 1 mod 16 e 15 \equiv -1 mod 16
+=*3=> x \equiv -3 mod 16 
+=> x \equiv 13 mod 15
+
+As soluções de 7^x\equiv 6 mod 17 são x \equiv 13 mod 16 (todos os números congruentes com 13 mod 16)

@@ -1,0 +1,33 @@
+Seja p primo ímpar. r raiz primitiva de p.
+
+Z_p^* = {1,...,p-1} = <r> = {r^1, r^",.., r^p-1 = 1}
+
+b \in Zp^*, \exists_x único (1 <= k <= p-1) : b \equiv r^k mod p 
+
+k = log_r b = ind_r k.
+Determinar k é um problema NP.
+
+
+
+Criação da chave pública:
+
+Seja p primo, r uma r.p, 1 <= a <= p-1; b \equiv r^a mod p.
+PubKey = (p,r,b)
+Privkey = a
+
+Cifração:
+mens \in Zp^*
+
+Escolhe k aleatório, 1 <= k <= p-2
+Calcular 
+\sigma = r^k mod p,
+\gamma = mens * b^k mod p 
+
+Envia (\sigma, \gamma)
+
+Decifração:
+
+(\sigma^a)^-1 * \gamma \equiv ((r^k)^a)^-1 *mens*b^k mod p
+\equiv ((r^a)^k)^-1 * b^k * mens mod p
+\equiv (b^k)^-1 * b^k * mens mod p
+\equiv mens mod p

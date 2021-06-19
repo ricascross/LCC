@@ -1,0 +1,52 @@
+n composto grande
+p menor primo tq pn
+
+obj:  encontrar inteiros x_1,x_2,...,x_s tq [x_i]_n intersecao [x_j]_n =vazio
+mas q exista [x_i]_p = [x_j]_p
+
+isto e
+x_i \notequiv x_j (mod n)
+mas
+x_i \equiv x_j (mod p)
+
+Se pn, como p(x_i - x_j) mas n nao divide (x_i - x_j) entao mdc(x_i - x_j, n) e fator nao trivial de n
+
+Construir x_1, ..., x_s -> definir uma sucessao pseudo aleatoria x_0, x_1,x_2,...
+
+f(x) in Z[x], grau de f(x) > 1
+
+x_0 in Z, 0 < x_0 < n
+
+x_{k+1} \equiv f(x_k) (mod n)
+
+
+Exemplo
+
+
+f(x) = x^2 + 1
+
+n = 5293 x_0 = 2
+
+x_1 \equiv f(x_0) = 4 (mod n)
+
+x_2 = 26
+
+x_3 = 677
+
+x_4 = 7474
+
+Para calcular um fator de n, calculamos 
+mdc(x_{2k} - x_k,n), k = 1,2,...
+
+Encontramos um factor de n se encontrarmos k, 1 < x_{2k} - x_k < n
+
+n = 5253 x_0 = 2 f(x) = x^2 +1
+
+mdc(x_2 - x_1,n) = 1
+
+mdc(x_4 - x_2,n) = 1
+
+mdc(x_6 - x_3,n) = 1
+
+mdc(x_8 - x_4,n) = 79
+e fator nao trivial de n

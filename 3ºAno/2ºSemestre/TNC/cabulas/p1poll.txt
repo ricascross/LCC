@@ -1,0 +1,49 @@
+Seja n impar composto.
+
+Objetivo:
+ Encontrar um fattor não trivial de n-
+
+ Seja p um fator primo de n tal que (p-1) | k! para uim certo k.
+ (para que k não seja grande, é conveniente que p-q tenha fatores primos pequenos)
+
+ (p-1)|k! então k! = (p-1)q
+
+ 2^k! = 2^(p-1)1 (PTF)\equiv 1 mod p
+
+ 2^k! \equiv 1 mod p => 2^k!-1 \equiv 0 mod p => p | (2^k! -1)
+
+ 2^k! -1 = nt + M(resto), i.e, M = (2^k!-1)-nt 
+
+ p|n e p|(2^k!-1) => p | (2^k! -1 - nt) = p|M.
+
+ Aplicar o algoritmo de Euclides para calcular d= mdc(M,n), desde que 
+ M =/= 0, i.e, n (not divide) (2^k!-1) (é provável se n tem fatores orimos grandes)
+
+ Calcular 2^k! mod n 
+
+r1 = 2 mod n 
+r2 =  r^2 mod n
+r3 =  (r^2)^3 mod n
+r4 =  (r^3)^4 mod n
+...
+rk =  (r^k-1)^k mod n
+
+
+Para fatorizar n, calcula-se:
+mdc(r_k-1, n), k = 1,2,... até obter mdc(r_s-1, n) = d =/= 1
+
+Exemplo:
+
+n = 5157437 
+
+2^9! mod n 
+
+r1 = 2 mod n 
+r2 = 4 mod n 
+r3 = 4^3 mod n 
+r4 = (4^3)^4 mod n 
+
+Para fatorizar n, calcula-se:
+mdc(r_k-1, n) =  1 , k = 1,2,...,8
+mdc(r_s-1, n) =  2269 | n .
+

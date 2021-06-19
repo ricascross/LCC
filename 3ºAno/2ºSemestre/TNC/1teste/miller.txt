@@ -1,0 +1,27 @@
+PERGUNTA:
+
+Verifique se n = 2^4*3+1 passa o teste de Miller na base 2.
+
+
+RESPOSTA:
+
+b = 2
+
+n = 2^4*3+1 = 49
+
+n-1 = 48 = 2^4*3, em que s = 4 e s é o numero de divisoes por 2 de 48. 
+
+t = 3, s = 4;
+
+49 passa o teste de Miller para a base 2 se:
+
+b^t \equiv 1 mod n ou b^(2^j)*t \equiv -1 mod n, 
+0 <= j <= s-1, 0 <= j <= 3;
+
+j = 0: 2^(2^0)*3 = 2^3 \equiv 8 mod 49, logo 2^3 \notequiv +- 1 mod n 
+j = 1: 2^(2^1)*3 = 2^6 \equiv 15 mod 49, logo 2^6 \notequiv - 1 mod n 
+j = 2: 2^(2^2)*3 = 2^12 \equiv 29 mod 49, logo 2^12 \notequiv - 1 mod n 
+j = 3: 2^(2^3)*3 = 2^24 \equiv 8 mod 49, logo 2^24 \notequiv - 1 mod n 
+
+
+Logo, 49 nao passa no teste de Miller.

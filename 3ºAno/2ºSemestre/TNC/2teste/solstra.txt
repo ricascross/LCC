@@ -1,0 +1,14 @@
+PERGUNTA:
+
+mostre, detalhadamente, que qualquer primo impar passa o teste de primalidade
+probabilistico Solovay-Strassen.
+
+RESPOSTA:
+
+    p primo impar.
+    Pelo C.E, se "a" e tal que mdc(a,p) = 1, 
+    entao (a/p) \equiv a^(p-1/2) mod p.
+
+    Logo, para "a" t.q 1<=a<=p-1, mdc(a,p) = 1.
+    Portanto, (a/p) \equiv a^(p-1/2) mod p, para algum "a", 1 <= a <= p-1.
+    Assim, p passa o teste de primalidade de Solovay-Strassen.

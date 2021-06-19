@@ -1,0 +1,20 @@
+PERGUNTA:
+
+Seja n = 943. Encontre um divisor nao trivial de n usando o algoritmo de fatorizacao
+de fermat. sabe-se que (sqrt(n) \approx 30.708)
+
+RESPOSTA:
+
+n = 943. sabe-se que (sqrt(n) \approx 30.708)
+
+s = \ceil(parte inteira) (sqrt(n)) = 31.
+
+s^2-n = 31^2 -943 = 18, mas 18 nao e um quadrado perfeito
+Entao:
+
+s = s+1 = 31+1= 32
+s^2-n = 32^2-943 = 81, e 81 e um quadrado perfeito
+
+s = 32; t = 9.
+
+n = s^2-t^2 = (s+t)(s-t) = (32+9)(32-9) = 41 * 23 = 943.

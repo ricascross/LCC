@@ -1,0 +1,13 @@
+Seja p primo, r r.p de p.
+Z_p^* = <r>
+
+Alice e Bob acordam em p, r.
+Alice escolhe um certo 1 < a < p-1
+Bob escolhe 1 < b < p-1
+Alice envia a bob r^a mod p
+Bob envia a Alice r^b mod p
+Alice calcula (r^b)^a mod p, não sabe o que é o b mas sabe o que é o r^b
+Bob calcula (r^a)^b mod p, não sabe o que é o a mas sabe o que é o r^a 
+A e B acordam na chave r^(a*b) mod p.
+
+A eve sabendo r^a, quer saber o "a", o que ºe um problema dificl equivalente ao logaritmo discreto.

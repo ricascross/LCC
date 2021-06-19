@@ -1,0 +1,10 @@
+Seja n ímpar composto. dizemos que n ºe pseudo primo Euler para base b se mdc(b,n) = 1 e b^(n-1/2) = (b/n) mod n.
+
+Teorema:
+Seja n pspEuler para base b. Então n é um pspEuler na base b.
+
+Dem:
+Por hipótese, n é composto.
+b^(n-1/2) \equiv (b/n) mod n => (b^(n-1)/2)^2 \equiv (b/n)^2 mod n => b^n-1 \equiv 1 mod n.
+
+logo, b é pspf na base b

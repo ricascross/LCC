@@ -1,0 +1,99 @@
+Seja n ímpar.
+
+n = 2^s * t + 1, s\in N, t ímpar, mdc(b,n) = 1.
+
+n passa o teste se b^t \equiv 1 mod n ou b^((2^s)*t) \equiv -1 mod n, para algum 0 <= j <= s-1.
+
+x_k \equiv b^(2^(s-k)) * t mod n 
+
+= b^((n-1)/2^k) mod n.
+
+
+NOta:
+
+ - n composto ímpar pspF base b que passa o teste de Miller na base b
+ - n composto ímpar pspf base b que passa o teste o teste de primalidade (PTF) na base b 
+
+
+ Ex:
+ n = 2047 = 23 . 89
+ n-1 = 2^1 . 1023           s = 1, t = 1023
+
+ n passa o teste de Miller na base 2.
+
+ b^t \equiv 1 mod n ou b^(2^j)*t \equiv -1 mod n , 0 <= j <= s-1.
+
+
+ Teorema:
+
+ Existe uma infinidade de números de pspF base 2.
+
+ Dem.
+ 
+Obj:
+n pseudo primo fraco base 2
+=>
+N = 2^{n} - 1 e pseudo primo forte base 2
+
+
+n impar
+pseudo primo fraco base 2
+
+2^{n-1} \equiv 1 (mod n)
+=>
+n(2^{n-1})
+=>
+2^{n-1}-1 = nk
+
+2^{n-1} -1 e impar 
+=>
+k impar
+
+N-1 = 2^{k} -2
+     = 2(2^{n-1} - 1) 
+     =2(nk)
+
+t=nk
+
+2^{t}
+= 2^{nk}
+= (2^{n})^{k}
+
+
+
+N passa no teorema de Miller na base 2, N e composto?
+
+dn
+=>
+(2^{d} -1)  (2^{n} - 1)
+
+n composto
+=>
+N = 2^{n} -1 e composto
+
+N pseudo primo Forte base 2
+
+
+
+ Teorema:
+ Se n é ímpar composto então n passa o teste Miller no máximo para (n-1)/4 base base
+ 1<b<n.
+
+
+ Corolário:
+
+ Seja n impar composto, base b. A probabilidade de n passar o teste de Miller é <=1/4.
+
+
+
+ Teste de primalidade probabilistico de Rabin:
+
+ Seja n ímpar. 1 <= k <= n-1.
+
+ Aplica-se Miller para b_i, b_i base em que 1 <= i <= k.
+
+ {b1, ..,b_k} bases de b.
+
+ Se n composto, a probabilidade de n passar os k testes de Miller é nor que 1/4^k .
+
+ 

@@ -1,0 +1,23 @@
+Teorema:
+n primo sse 
+(n-1)! \equiv -1 (mod n)
+
+dem:
+n = 2 (nao ha nada a provar)
+
+n primo impar 
+1 <= a <= n-1
+mdc(a,n) = 1
+=>
+existe a^-1 (mod n)
+
+
+a \equiv a^{-1} (mod n)
+=>
+a^2 \equiv 1 (mod n)
+
+=>Àa^-1
+
+(a-1)(a+1) \equiv 0 (mod n)
+=>
+a \equiv +- 1 (mod n)

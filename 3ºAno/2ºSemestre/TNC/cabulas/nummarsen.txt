@@ -1,0 +1,19 @@
+Teorema:
+
+2^n - 1 primo => n primo 
+
+Dem:
+
+d | n => (2^d - 1) | (2^n - 1)
+
+2^n -1 primo  => n primo (primos de marsenne)
+
+Mas não implica que o contrário seja verdadeiro, i.e, n primo => 2^n -1 primo 
+
+Ex: 
+
+Seja n =11 primo mas 2^11 -1 = 2047  não é primo (pois pspF base 2)
+
+
+Mp = 2^p - 1 primo de Marsénne de Mp é primo.
+

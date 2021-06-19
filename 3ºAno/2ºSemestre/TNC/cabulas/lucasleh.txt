@@ -1,0 +1,7 @@
+Seja p primo, Mp = 2^p - 1
+
+Definimos 
+
+r1 = 4, r_k  = (r_k-1)^2 -2 mod Mp, 0 <= M_k < M_p
+
+M_p é primo sse r_p-1 \equiv 0 mod Mp  

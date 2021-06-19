@@ -1,0 +1,32 @@
+Seja m_1, m_2, ..., m_k primos relativos (m_i, m_j) = 1 , i =/= j.
+
+x \equiv a_1 mod m_1
+x \equiv a_2 mod m_2
+...
+x \equiv a_k mod m_k
+
+tem solução única mod M=produtorio com i=1 até k tal que m_i.
+
+M_k = M/m_k = prudotrio de i=/=k m_i e M_k*x_k \equiv 1 mod m_k tem solução única.
+
+x barra = a_1*M_1*x_1 + a_2*M_2*x_2 .... + a_k*M_k*x_k
+
+
+Ex:
+8 x 11
+Z_90 -> Z_10xZ_9
+8    |-> (8,8)
+11   |-> (1,2)
+
+\phi^-1(8,7) =(8*1mod10, 8*2mod9) = 88, isomorfismos de aneis.
+
+
+8 x 12 = 96
+
+como 90 é menor que 96 entao temos demultiplicar por mais um primo 
+
+Z_630 -> Z_10xZ_9xZ_7
+12   |-> (2,3,5)
+8   |-> (8,8,1)
+
+TCR tem solução uncia mod 630, logo x = 96

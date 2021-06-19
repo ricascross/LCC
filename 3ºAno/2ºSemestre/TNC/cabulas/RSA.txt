@@ -1,0 +1,57 @@
+Criação da chave pública:
+
+p, q primos diferentes muito grandes (tipicamente 1024 bits)
+
+n = pq (número de bits é igual à soma dos bits de p e q)
+
+m = \phi(n) = (p-1)(q-1)
+
+Escolhe "e" \in Z_m^* (s.r.r), ou seja, "e"\inZ_n tal que mdc(e,m) = 1, i.e \exists_x : e*x \equiv 1 mod m 
+
+d = e^-1 mod m 
+
+PublicKey = (n,e) e PrivateKey = d.
+
+
+
+Cifração:
+
+Alice pretende enviar x \in Z_n, em que x é a mensagem, para bob 
+Alice consulta a PubKey= (n,e) de Bob.
+
+C(x) = x^e mod n  --> gera um criptograma.
+
+
+Decifracao:
+
+bob recebe o criptograma y \in Zn.
+
+dec(y) = y^d mod n. -> criptograma decifrado.
+
+
+Quebrar RSA?
+
+PubKey = (n,e) , n = p*q 
+
+Supor que se tem acesso à Pubkey = d, d = e^-1 mod \phi(n)
+
+c(x) =  x^e mod n, dec(y) = y^d mod n.
+
+Supor que se consegue calcular p ou q, tendo em conta que se sabe n.
+
+Consegue-se calcular \phi(n) = (p-1)(q-1)
+
+Como "e" é público, é possível calcular d = e^-1 mod \phi(n)
+
+Criptograma y --> y^d mod n.
+
+
+Dá para calcular n sem fatorizar?
+
+Dado n = p*q (calcular \phi(n) é equivalente a fatorizar n)
+Fatorizar n é problema NP.
+
+
+Conjetura: 
+
+Quebrar o RSA é equivalente à fatorização (produto de primos).     

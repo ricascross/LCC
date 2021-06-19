@@ -1,0 +1,32 @@
+PERGUNTA:
+
+Considere a chave RSA com parametros publicos (n,e) = (55,3). Calcule \phi(n). Decifre a mensagem cripto=8.
+(Sabe-se que 3^4 \equiv 1 mod 40)
+
+RESPOSTA:
+
+(n,e) = (55,3);
+cripto=8; 
+3^4 \equiv 1 mod 40
+
+    . 55 = p*q = 11*5
+    . \phi(55) = (11-1)(5-1) = 40
+
+    . d = 3^-1 mod 40 = -13 mod 40 = 27 
+    40 = 3*(13) + 1 => 40 + 3*(-13) = 1
+    Logo, 3^-1 = -13   
+
+    . PrivKey = d, Pubkey = (55,3)
+
+
+    . Decifracao: cripto^d mod 55 => 8^27 mod 55
+
+
+    - 8^2 = 64 \equiv 9 mod 55
+    - 8^3 = 17 mod 55
+    - 8^4 = 8^2*8^2 = 9*9 = 26 mod 55
+    - 8^7 = 8^7*8^3 = 17*26 = 2 mod 55
+    - 8^21 = 8^7*8^7*8^7 = 2*2*2 = 8 mod 55
+    - 8^27 = 8^21*8^4*8^2 = 8*26*9 = 2 mod 55
+
+    Logo, a mensagem e 2.

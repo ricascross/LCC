@@ -1,0 +1,74 @@
+PERGUNTA:
+
+Considere o numero primo p=17. Sabe-se que ind_3 2 = 14 mod 17.
+
+a) Mostre que 3 e uma raiz primitica modulo 17, 
+sabendo que 17 \notdivde (3^8 -1).
+
+b) Resolva 9^x \equiv 2 mod 17
+
+c) usando o sistema de chave pública ElGamal, com chave publica (17,3,2),
+decifre a mensagem interceptada (2,5)
+
+RESPOSTA:
+
+a) 
+    17 \notdivde (3^8 -1) => (3^8-1) \equiv 0 mod 17 => 3^8 \equiv 1 mod 17.
+
+    ord_17 3 = 16 = \phi(17) ????
+
+    ord_17 3 \in {1,2,4,8,16}
+
+    3^1 \equiv 3 mod 17, logo \notequiv 1 mod 17
+    3^2 \equiv 9 mod 17, logo \notequiv 1 mod 17
+    3^4 \equiv 9*9 mod 17 => 81 mod 17 => 13 mod 17, logo \notequiv 1 mod 17
+    3^8 \notequiv 1 mod 17
+    3^16 \equiv 3^4*3^4*3^4*3^4 mod 17 => 13*13*13*13 mod 17 => \equiv 1 mod 17.
+
+    Logo, ord_17 3 = 16 e como \phi(17) = 16, entao 3 e raiz primitiva de 17.
+
+
+b)
+    9^x \equiv 2 mod 17
+    => ind_3 9^x \equiv ind_3 2 mod 16
+    => x*ind_3 9 \equiv ind_3 2 mod 16
+    sabe-se que ind_3 9 => log_3 3^2 mod p = 2 e ind_3 2 = 14 mod 17.
+    => x * 2 \equiv 14 mod 16
+    dividir por 2
+    => x \equiv  7 mod 8
+    => x \equiv 7 mod 16 ou x \equiv 15 mod 16.
+
+c) 
+    PubKey = (17,3,2) mensagem intecetada (2,5) = (\sigma, \delta)
+    
+    e necessario descobrir o a, entao
+    b \equiv r^a(mod p) => ind_r b = a => ind_3 2 = a => 14 = a
+
+    DECIFRACAO:
+
+    (\sigma^a)^-1 * \gamma \equiv ((r^k)^a)^-1 *mens*b^k mod p
+    \equiv ((r^a)^k)^-1 * b^k * mens mod p
+    \equiv (b^k)^-1 * b^k * mens mod p
+    \equiv mens mod p
+
+    Então, 
+
+    (\sigma^a)^-1 * \gamma 
+    => (2^14)^-1 * 5 
+    => 13^-1 * 5 mod 17
+    => 4 * 5 mod 17
+    => 20 mod 17
+    => 3
+
+
+    . 13^-1 mod 17
+    => 17 = 13*(1) + 4; 13 = 4 * (3) + 1
+    
+    => 17 + 13 * (-1) = 4; 13 + 4 * (-3) =1
+    
+    => 13 + (17 + 13 * (-1))*(-3) = 1
+    => 13 + 17*(-3) + 13 * (3) = 1
+    => 17*(-3) + 13 * (4) = 1
+    Como qualquer coisa multiplicada por 17(numero primo) e 0, entao
+    => 13 * 4
+    => logo 4 e o inverso de 13, 13^-1 = 4 

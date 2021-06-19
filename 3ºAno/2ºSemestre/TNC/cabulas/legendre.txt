@@ -1,0 +1,117 @@
+Seja p =/= 2 primo
+
+(a/p) = 
+    . 1 se a é r.q
+    . -1 se a é n-rq
+
+(3/11) = 1 porque 5^2 \equiv 3 mod 11
+(2/11) = -1 porque 2 é n-rq 
+
+
+CRITERIO DE EULER:
+
+seja p primo ímpar, mdc(p,a) = 1
+Então (a/p)\equiv a^((p-1) /2) mod p 
+
+Dem:
+Supor (a/p) = 1, i.e, \existsx:x^2\equiv a mod p, ou seja a é r.q.
+Seja x_0 é uma solução de x^2 \equiv a mod p, i.e x_0^2 \equiv a mod p.
+
+a^((p-1)/2) \equiv (Prova:x^2\equiv a mod p) (x_0^2)^((p-1)/2) = x_0^(p-1) \equiv(PTF) 1 mod p = (a/p)
+
+Supor (a/p) = -1, i.e, a é nrq, ou seja, para todo x, x^2 \equiv a mod p.
+Fizxemos i com 1 <= i <0 p-1, i.e i\inZp^*. Então mdc(i,p) = 1. Então i é invertível mod p. Ou seja,
+existe um único j, 1<=j<=p-1 tal que i*j\equiv a mod p ( basta tomar j=i^-1*a)
+Sabemos ainda, que j=/= 1. Senão (se j=i), i*j= i^2\equic a e, portanto i seria solução de x^2 \equiv a mod p.
+Logo, j=/=u. para cada i \in Z_p^*, encontramos um j\inZ_p^* nestas condições, i*j\equiv a mod p, i\notequiv j mod p.
+i \in Zp^*, j\inZ_p^*.
+
+Podemos agrupar os elemontos de Z_p^* em pares (i,j), com i*j \equiv a mod p, i =/= j.
+p-1/2 pares
+    i1*j1 \equiv a mod p. j1 =/= i1
+    i2*j2 \equiv a mod p. j2 =/= i2
+    ...
+    i_((p-1)/2)*j_((p-1)/2) \equiv a mod p. j((p-1)/2) =/= i((p-1)/2)
+
+    i_k são todos distintos, j_k são todos distintos, não sºo entre si como distintos de i_k.
+
+    {i1,j1,i2,j2,...., i_((p-1)/2),j_((p-1)/2)} = Z_p^*
+    ou sejam o produtorio de k = 1 até p-1/2 i_k*i_k = 1*2*3*...*(p-1) = (p-1)! \equic a^((p-1) / 2) mod p.
+
+    Obtemos assim (p-1)! \equiv a^((p-1)/2) mod p.
+    Mas  (p-1)! \equiv -1 mod p (teorema de wilson)
+    logo, a^((p-1)/2) \equiv -1 mod p 
+    Como (a/p)=-1 obtemos a^p-1/2 \equiv (a/p) mod p  
+
+
+Exemplo:
+(2/17) = 2^((17-1)/2) mod 17
+=2^4 \equiv -1 mod 17
+=2^((17-1)/2) =  2^16/2 = 2^8 = (2^4\equiv -1)= (2^4)^2 \equiv 1 mod 17 = 1 \equiv 1 mod 17.
+
+Logo, usando o CE, (2/17) = 1, ou seja 2 é r.q de 17, ou seja, \exists_x \in Z_17*: x^2 \equiv 2 mod 17.
+
+
+PROPRIEDADES:
+
+p=/=2 primo, p \notdivde a, p\notdivde b 
+
+1) a \equiv b mod p => (a/p) = (b/p)
+2) (a/p)(b/p) = (a*b/p)
+3) (a^2/p) = 1.
+
+Dem:
+1) x^2 \equiv a mod p tem solução sse x^2 \equivb mod p tem solução
+2) pelo CE 
+(a/p) \equiv a^((p-1)/2) mod p
+(b/p) \equiv b^((p-1)/2) mod p
+
+(a*b/p) \equiv(CE) (ab)^((p-1)/2) mod p => (a*b/p) \equiv a^((p-1)/2) mod p * b^((p-1)/2) mod p
+=> (a*b/p)=(a/p)(b/p) mod p .
+
+OBS: O produto de {r.q, n-rq} é um r.q.
+
+
+
+
+Quando é -1 um rq?
+
+(-1/p) = 
+    . 1 se p \equiv 1 mod 4
+    . -1 se p \equiv -1 mod 4
+
+dem:
+Pelo CE (-1/p) = (-1)^(p-1/2) mod p 
+
+Se p é um primo impar => p \equiv +- 1 mod 4.
+
+Supondo p \equiv 1 mod 4 => p = 4k + 1 para algum k.
+=> (-1)^(p-1/2) = (-1)^(4k/2) = (-1)^2k = ((-1)^2)^k = 1.
+=> (-1/p) = 1 
+
+
+
+Supondo p \equiv -1 mod 4 => p \equiv 3 mod 4=> p = 4k + 3 para algum k.
+=> (-1)^(p-1/2) = (-1)^((4k + 2)/2) = (-1)^2k+1 = -1.
+=> (-1/p) = -1.
+
+
+ MAIS PROPRIEDADES:
+
+Seja   p=/=2 primo,
+
+(-1/p) = 
+    . 1 se p \equiv 1 mod 4
+    . -1 se p \equiv -1 mod 4
+
+(2/p) = (-1)^((p^2)-1)/8
+    . 1 se p \equiv +- 1 mod 8
+    . -1 se p \equiv +- 3 mod 8
+
+
+LEI DA RECIPROCIDADE QUADRATICA:
+
+Sejam p, q PRIMOS IMPARES DISTINTOS. Então,
+
+(p/q) = (-1)*((p-1)/2)*((q-1)/2) * (q/p)
+

@@ -1,0 +1,13 @@
+r \in Z_n^*. r é raiz primitiva de n se <r> = {r^1,r^2,...,r^\phi(n)} = Z_n^*,
+
+i.e, ord_n r = \phi(n)
+
+Ex:
+
+ord_7 2 = 3,    <2> = {2, 2^2, 2^3} = {2,4,1}, \phi(7) = 6.
+2 não é raiz primitiva
+
+
+ord_7 3 = 6 = \phi(7), <3> = {3, 3^2, 3^3, 3^5, 3^6=1} = Z_7^*
+3 é raiz primitiva
+

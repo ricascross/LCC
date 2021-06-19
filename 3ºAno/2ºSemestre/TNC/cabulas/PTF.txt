@@ -1,0 +1,43 @@
+Seja p primo, a \in N tal que p (notdivide) a (i.e, mdc(a, p) = 1)
+Então a^p-1 \equiv 1 mod p 
+
+Dem:
+
+Z_p = {0,1,..., p-1}
+
+Pegar em mdc(a,p) = 1
+
+aZp = {0,a,2a,3a, ...m (p-1)a} é um sistema completo de residuos
+
+ka \equiv k'a mod p, 0 < k <= k' <= p-1
+=>  k = k'
+    ka \equiv k'a mod p => (k-k')a \equiv 0 mod p 
+mdc(a,p) = 1 => k \equiv k' mod p 
+k, k' <=p-1 => k = k'
+
+prod_i-1 i  \equiv prod_i-1 a_i mod p => (p-1)! \equiv a^p-1 (p-1)! mod p => 
+a^pe-1\equiv 1 modp.
+
+
+Teorema:
+Seja p primo, a\in N. Então a^p \equiv a mod p.
+
+Ex:
+
+3^201 mod 11
+
+3^201 = (3^10)^20 * 3 \equiv 3 mod 11
+
+Supor a \in Zp\{0}
+mdc(a,p) = 1 => \exists a^-1 mod p 
+
+a^p-2 a = a^p-1 \equiv 1 mod p => a^-1 = a^p-2
+
+IMPORTANTE:
+3^-1 mod 11 = 3^9*3 (PTF)= 3^10 \equiv 1 mod 11
+
+
+Corolario:
+Seja p primo, p (notdivide) a, ax \equiv b mod p tem uma única solução
+
+x \equiv a^p-2 b mod p 

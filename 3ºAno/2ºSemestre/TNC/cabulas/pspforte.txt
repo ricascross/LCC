@@ -1,0 +1,17 @@
+Seja p primo então x^2 \equiv 1 mod p => x \equiv +- 1 mod p 
+
+
+Definição:
+
+n \in N 
+
+x é raiz quadrada não trivial de 1 módulo n se x^2 \equiv 1 mod n mas x \notequiv +- 1 mod n.
+
+Ex:
+
+n = 15, 4^2 \equiv 1 mod 15
+
+4 é a raiz quadrada não trivial de 1 mod 15 => 15 é composto.
+
+Nota: se existe raiz quadrada não trivial de 1 módulo n, então n é composto.
+

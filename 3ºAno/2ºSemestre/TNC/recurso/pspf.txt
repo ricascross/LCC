@@ -1,0 +1,40 @@
+QUESTAO:
+
+Mostre que se n e um pseudoprimo fraco de base 2 entao N = 2^n - 1 e um pseudoprimo forte de base 2.
+
+
+
+RESPOSTA:
+
+Admitamos que n e um pseudoprimo fraco de base 2. Entao, n e composto e 2^{n-1} \equiv 1 (mod n)
+
+Como 2^{n-1} \equiv 1 (mod n), temos que n | (2^{n-1}-1), ou seja,
+2^{n-1} - 1 \equiv nk,
+para algum k.
+Note se que, sendo 2^{n-1} -1 impar, k tambem e impar.
+
+Seja N = 2^n - 1. Temos que
+
+N-1 
+= 2^n -1 -1 
+= 2^n -2 
+= 2 *(2^{n-1} -1)
+= 2 *  nk,
+donde,
+N-1
+= 2^s * t, com s = 1  e t=nk
+
+Mais,
+2^t 
+= 2^{nk} 
+= (2^n)^k
+congruente 1 (mod N)
+= N+1 congruente 1 (mod n)
+
+
+Como 2^t congruente 1 (mod N), podemos afirmar que N passa o teste de Miller para a base 2.
+
+Alem disso, sendo n composto, n admite um divisor nao trivial d. 
+Assim, 2^d -1  2^n -1, donde N e composto.
+Portanto, N e um pseudoprimo forte de base 2.
+

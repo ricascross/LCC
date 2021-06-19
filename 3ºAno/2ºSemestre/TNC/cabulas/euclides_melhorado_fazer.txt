@@ -1,0 +1,6 @@
+Sejam Sn e Tn duas sequências.
+Em que Sn:
+    . s0 = 1 ; s1 = 0; s_i+1 = s_i-1 - s_iq_i
+
+Em que tn:
+    . t0 = 1 ; t1 = 0; t_i+1 = t_i-1 - t_iq_i

@@ -1,0 +1,6 @@
+Seja n \in N, n ímpar
+Aleatoriamente, escolhem.se k bases, 1<b1,b2,...,bl < n-1 , sem perda de generalidade mdc(bi, n)=1
+verifica-se se b_j^(n-1/2)\equiv (b_j/n) mod N
+Se iuma das congruências não for satisfeita então n é composto.
+
+Se TODAS as congruências forem válidas então a probabilisade de n não ser primo é menor que 1/2^k.

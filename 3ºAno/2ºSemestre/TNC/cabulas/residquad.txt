@@ -1,0 +1,69 @@
+Definicao:
+
+a é residuo quadrático de n se mdc(a,n) = 1 e \exists_x : x^2 \equiv a mod n
+a é NÂO resíduo quadrático se \notexists x \in Z_n^*: x^2 \equiv a mod n 
+
+residuo quadratico -r.q
+residuo não quadratico - n-r.q
+
+Lema:
+2=/= p primo, mdc(a,p) = 1.
+
+x^2 \equiv a mod p ou não tem soluções ou tem exatamente 2 soluções(incongruentes).
+
+
+Teorema:
+2 =/= p primo. Do s.r.r Z_p^X, exatamente p-1/2 são r.q  e exatamente p-1/2 são n-rq.
+
+Exemplo:
+
+Z_5^* = {1,2,3,4}, em que 1, 4 s\ao r.q e 2,3 - n-r.q.
+
+dem:
+a \in Zp^*, para cada a, x^2 \equic a mod p ou não tem solução, ou x^2 \equiv a mod p tem exatamente 2 soluções.
+
+Zp^* x^2 \equiv 1 mod p, x^2 \equiv 2 mod p, ..., x^2 \equiv p-1 mod p => p-1 equiações
+
+cada equação tem ou 0 ou 2 soluções. Logo tem p-1/2 r.q e p-1/2 n-r.q .
+
+
+
+Seja p=/= 2 primo, Zp^* <r> (todo o primo tem raiz primitiva)
+
+Z_5^* = <2>, ord_5 2 | \phi(5)=4 =>ord_5 2 \in {1,2,3,4}
+
+
+2^1 \notequiv 1, s^2 \notequiv1 => ord_52 = 4
+
+<2> = {2, 2^2, 2^3, 2^4} = Z_5^* = {1,2,3,4}
+
+ind_2 2^3 = 3
+ind_2 1 = ind_2 2^4 = 4 \equiv 0 mod \phi(5).
+
+
+Teorema:
+2 =/= p primo, r r.q de p, a\in Z_p^*, ou seja, p \notdivide a 
+
+Então ind_r a par => a r.q 
+ind_r a ímpar => a n-r.q 
+
+Dem:
+Supondo ind_r a par 
+a \equiv r^ind_r a mod p => (r^((ind_r a)/2))^2 \equiv a mod p.
+logo, \exists x (basta tomar (r^((ind_r a)/2)) tal que x^2 \equiv a mod p 
+
+
+Supondo a r.q. Existe x, x^2 \equiv a mod p 
+=> ind_r x^2 \equiv ind_r a mod \phi(p)
+=> 2* ind_r x \equiv ind_r a mod p-1 (par)
+=> (p-1)(par) | (2*ind_r x (par) - ind_r a) 
+=> ind_r a par.
+
+
+Teorema: Zp_*; p-1/2 s\ao r.q e p-1/2 são n-r.q.
+Dem:
+Seja r r.q de p Zp^* = <r>
+a\in Zp^*, \exists_k : a \equiv r^k mod p, 1 <= k <= p-1 k 0 ind_r a 
+
+p-1/2 escolhas quando k par, ind_r r^k ºé par <=> r^k é r.q 
+p-1/2 escolhas quando k impar, ind_r r^k ºé impar <=> r^k é n-r.q 

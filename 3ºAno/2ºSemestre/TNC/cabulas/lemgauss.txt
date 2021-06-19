@@ -1,0 +1,62 @@
+
+LWMA DE GAUSS:
+
+Seja p=/=2 primo, mdc(a,p) = 1.
+Seja s o nº dos menores residuos a, 2a,3a,..., (p-1/2)*a qua são maiores que p/2. Então (a/p)=(-1)^s.
+
+Dem:
+Seja s o nº de residuos em Z_p^* obtidos de 
+1*2,2*2,3*2,...,p-1/2*2
+que são menores que p/2. Pelo lema de Gauss.
+(2/p)=(-1)^s
+
+Seja 1 <= k <= p-1/2
+2*k < p/2 sse k < p/4.
+
+Nota: 1*2, 2*2,..., p-1/2 * 2 igualam os seus residuos.
+Logo, a parte inteira p/4  dos inteiros 1*2, 2*2,..., p-1/2 * 2 são z p/2.
+
+há s= p-1/2 residuos  -(menos) parte inteira p/4 que são > p/2.
+
+Aplicando o lema de gauss, (2/p) = (-1)^s = (-1)^(p-1/2) - parte inteira p/4.
+
+basta mostrar que p^2-1/8 \equiv p-172 -parteinteira(p/4) mod 2 (têm a mesma paridade)
+    . p \equiv 1 mod8, i.e, p = 8k +1, 
+        p-1/2 - parte inteira (p/4) = 4k - parte interira (8k+1/4) = 4k- parte inteira(2k +1/4)
+        = 4k-2k \equiv 0 mod 2
+        p^2-1/8 = (8k+1)^2-1/8 = 64k^2 + 16k/8 \equiv 0 mod 2
+    
+    . p \equiv 3 mod8, i.e, p = 8k +3 
+        p-1/2 - parte inteira (p/4) = 4k+1 - parte interira (2k+3/4) = 2k+1 \equiv 1 mod 2
+        = 4k-2k \equiv 0 mod 2
+        p^2-1/8 = (64k^2 + 8*6k +8)/8 = (8k^2 + 6k) +1 =  2(4k^2 + 3k)+1 \equiv 1 mod 2
+    . p \equiv 5 mod8 
+
+    . p \equiv 7 mod8, i.e, p = 8k +7, 
+        p-1/2 - parte inteira (p/4) = 4k+3 - parte interira (8k+7/4) = 4k+3- parte inteira(2k +7/4)
+        = 4k+3 - (2k+1)=2k+2 \equiv 0 mod 2
+        p^2-1/8 = ...
+        
+
+Ex:
+ . (3/7), 1 <= k <= (p-1)/2 
+
+
+
+ ka     | 3 2*3 3*3  <- 7-1/2 = 3 elementos
+ mod p  | 3  6  2
+
+ p/2 = 7/2 = 3.5
+
+como só o 6 é maior que 3.5, então s=1, (3/7)=(-1)^s = -1
+
+
+EX2:
+ . (5/11), 1 <= k <= (p-1)/2 
+
+ ka     | 5 2.5 3.5 4.5 5.5 <- 5-1/2 = 10/2=5 elementos
+ mod p  | 5 10  4    9   3
+
+ p/2 = 11/2 = 5.5
+
+ como 10 e 9 maior que 5.5, então s=2 logo (5/11)=(-1)^2 = 1.

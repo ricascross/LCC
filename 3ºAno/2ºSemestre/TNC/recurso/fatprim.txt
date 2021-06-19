@@ -1,0 +1,28 @@
+QUESTAO:
+
+Suponha que n e o produto de dois primos distintos. Mostre que fatorizar n
+nos seus primos equivalente a calcular \phi(n).
+
+RESPOSTA:
+Suponhamos que n = pq e que conhecemos p e q. Sabemos que phi(n) = (p-1)(q-1).
+Reciprocamente, suponhamos que conhecemos n e phi(n). Pretendemos determinar p e q.
+Temos
+phi(n) = (p-1)(q-1)
+<=>
+phi(n) = pq - p - q + 1
+<=>
+p+q = n-phi(n) +1
+
+Alem disso,
+(p-q)^2 = (p+q)^2 - 4pq.
+
+Suponhamos sem perda de generalidade que p > q. Entao,
+
+p-q = sqrt((p+q)^2 - 4pq)
+= sqrt((n-phi(n)+1)^2 - 4n)
+
+Assim, conhecendo n e phi(n), podemos determinar p+q e p-q. De seguida, calculamos p e q atraves de:
+
+p = 1/2 * ((p+q)+(p-q))
+e
+q = 1/2 * ((p+q)-(p-q))

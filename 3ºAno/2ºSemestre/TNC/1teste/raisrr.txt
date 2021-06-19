@@ -1,0 +1,19 @@
+Suponha que n admite uma raiz primitiva r. Mostre que 
+{r^1,r^2,..,r^\phi(n)} e um sistema reduzido de residuos modulo n.
+
+RESPOSTA:
+
+Sabemos que #Z_n = phi(n) e que qualque conjunto de phi(n) elementos invertiveis um Z_n e 
+incongruentes entre si e um s.r.r.
+
+Consideramos S = {r^1, r^2, ..., r^{phi(n)}
+
+Suponhamos que existem i,j in {1, ... , phi(n)} tais que r^i \equiv r^j (mod n). 
+Sabemos que r^i \equiv r^j (mod n). Sabemos que r^i \equiv r^j (mod n) 
+<=> i \equiv j (mod ord_n r) <=> i \equiv j (mod phi(n)) <=> i = j. 
+Assim, 1 <= i,j <= phi(n)
+
+r^i \notequiv r^j (mod n), para i,j in {1, ..., phi(n)} tais que i != j.
+
+Logo, #S = phi(n) e S e formado por elementos incongruentes (modulo n) entre si. 
+Portanto, S e um s.r.r - modulo n.

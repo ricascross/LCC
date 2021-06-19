@@ -1,0 +1,21 @@
+PERGUNTA:
+
+    Enuncie o teste probabilistico de primalidade de miller-Rabin.
+    Mostre que 57 nao passa o teste de miller-rabin de base 2.
+    Sabe-se 2^14 \notequiv -1 mod 57 e 2^28 \notequiv -1 mod 57.
+
+RESPOSTA:
+
+    b = 2, n=57
+
+    n-1 = 2^3 * 7, 3 numero de divisoes de (n-1) por 2
+
+    s=3; t = 7;
+
+    temos:
+
+    j=0: 2^(2^0)*7 \equiv 14 mod 57, logo \notequiv -1 mod 57
+    j=1: 2^(2^1)*7 = 2^14 \notequiv -1 mod 57
+    j=2: 2^(2^2)*7 = 2^28 \notequiv -1 mod 57
+
+    Portanto, n=57 nao passa o teste de miller.

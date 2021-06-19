@@ -1,0 +1,77 @@
+phi: N -> N 
+n |-> phi(n) = #{m \in N: m <= n e mdc(m,n) = 1} = Somatorio 1 ()1 <=k<=n, mdc(k,n)=1
+
+phi(6) = #{1,5} = 2
+phi(7) = #{1,2,3,5,6} = 6
+phi(p) = p-1 se p for primo
+
+Se a \in Zn, a^-1 existe sse mdc(a,n) = 1.
+phi(n) \equiv nº de elementos em Zn primos relativos com n, i.e, que tÊm inverso.
+
+
+Def:
+
+S é um sistema reduzido de resíduos (s.r.r) se for um subconjunto de s.c.r e para todo a \in S, 
+
+\exists a^-1 i.e, mdc(a,n) = 1 e #S = phi(n).
+
+Exemplo:
+
+n = 15. s.c.r Z_15 = {0,1,2,...,13,14}
+        s.r.r Z_15^* = {1,2,4,8,11,13} = \phi(15) = 8
+
+
+Quando p primo => \phi(p) = p - 1.
+
+
+
+Teorema:
+
+Seja {r1, r2,...,r_phi(n)} s.r.r, mdc(a,n) = 1
+
+Então {a*r1, a*r2, ...m a*r_phi(n)} é s.r.r.
+
+"Fazer se conseguir"
+
+
+Teorema:
+Seja n\in N, a \in Z, mdc(a,n) = 1. Então a^phi(n) \equiv 1 mod n.
+Se n é primo <=> \phi(n) = n-1. 
+
+p primo e p \notdivide a => a^p-1 \equiv 1 mod n.
+
+
+Função multiplicativa:
+
+f: N -> R, função aritmética
+Se f é tal que f(mn) mdc(m,n)=1 = f(m)f(n), chama-se função multiplicativa.
+
+
+Teorema:
+Seja f uma função multiplicativa. Seja n = \produtorio p_i^\alpha_i fatorização em primos.
+
+Entao, f(n) = \produtorio f(p_i^\alpha_i).
+
+Dem:
+usando indução sobre primos diferentes
+n = p_1^\alpha_1* p_2^\alpha_2 ... * p_k^\alpha_k * p_k+1^\alpha_k+1  , 
+mdc(p_1^\alpha_1* p_2^\alpha_2 ... * p_k^\alpha_k , p_k+1^\alpha_k+1) = 1
+
+f(n) = f(p_1^\alpha_1* p_2^\alpha_2 ... * p_k^\alpha_k , p_k+1^\alpha_k+1) 
+= f(p_1^\alpha_1* p_2^\alpha_2 ... * p_k^\alpha_k) * f(p_k+1^\alpha_k+1)
+= f(p_1^\alpha_1)* f(p_2^\alpha_2) ... * f(p_k^\alpha_k) * f(p_k+1^\alpha_k+1) 
+
+
+Teorema:
+\phi é multiplicativa, mdc(m,n) = 1 => \phi(m*n) = \phi(m)\phi(n)
+
+p primo; \phi(p) = p-1, \phi(p^\alpha) = p^\alpha - p^\alpha-1
+
+Ex:
+\phi(12) =  \phi(2^2 * 3) = \phi(2^2)\phi(3) = (2^2 - 2^1) * 2 = 4.
+
+\phi(35) =  \phi(5 * 7) = \phi(5)\phi(7) = 4 * 6 = 24.
+
+\phi(1024) =  \phi(2^10) = (2^10 - 2^9) = 512.
+
+Se p,q primos diferents. Então \phi(p*q)=(p-1)(q-1).

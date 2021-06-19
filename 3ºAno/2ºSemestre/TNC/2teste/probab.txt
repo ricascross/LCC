@@ -1,0 +1,31 @@
+PERGUNTA:
+
+    Sejam p,q primos distintos e n=pq. Mostre que a probabilidade de (x,n) =/= 1
+    com 0 <= x < n e 1/p + 1/q - 1/p*q.
+
+RESPOSTA:
+
+p,q primos
+n = pq
+phi(n) pode ser escrita como phi(n) = n(1 - 1/p)(1 - 1/q)
+
+De facto, 
+phi(n) 
+= (p-1)(q-1)
+= p(1 - 1/p)q(1 -1/q)
+= n(1-1/p)(1-1/q)
+
+
+phi(n): numero de numeros primos relativos com n inferiores a n
+Logo, o numero de numeros nao primos relativos com n inferiores a n e
+
+n - n(1-1/p)(1-1/q)
+
+Logo, a probabilidade de x nao ser primo com n e
+(n - n(1-1/p)(1-1/q)) / n
+
+=1-(1-1/p)(1-1/q)
+
+= 1 - (1 - 1/q - 1/p + 1/pq)
+
+= 1/p + 1/q - 1/pq

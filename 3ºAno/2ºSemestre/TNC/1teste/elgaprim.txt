@@ -1,0 +1,45 @@
+PERGUNTA:
+
+Considere o primo=19. Mostre que r = 2 é uma raiz primitica de p. Crie uma 
+chave ElGamal usandos os parametros p e r- use a chave publica para cifrar a mensagem
+mens = 5.
+
+
+RESPOSTA:
+
+P = 19.
+
+- Provar que r=2 E RAIZ PRIMITIVA:
+
+    Para ser raiz primitiva, ord_19 2 = 18 = \phi(19).
+
+    Ora, ord_19 2 \in {1,2,3,6,9,18=1}
+
+        . 2^1 \equiv 2 mod 19, logo não é \equiv 1 mod 19
+        . 2^2 \equiv 4 mod 19, logo não é \equiv 1 mod 19
+        . 2^3 \equiv 8 mod 19, logo não é \equiv 1 mod 19
+        . 2^6 \equiv 7 mod 19, logo não é \equiv 1 mod 19
+        . 2^9 \equiv 18 mod 19, logo não é \equiv 1 mod 19
+        . 2^18 \equiv 1 mod 19, logo não é \equiv 1 mod 19
+    
+   Logo, 2 é uma raiz primitiva.
+
+
+- Criar chave ElGamal 
+
+    p = 19, r = 2
+    necessário escolher um a entre 1 <= a <= 18. Seja a = 7.
+
+    b = r^a mod 19 = 2^7 mod 19 = 14.
+
+    PubKey = (19,2,18), PrivKey = 7
+
+- CIFRACAO
+    mens = 5 \in Zp
+    Seja k um numero aleatorio 1 <= k <= p-2. Seja k = 4.
+
+    \sigma = r^k mod p = 2^4 mod 19 = 16
+    \delta = mens*b^k mod p = 5*14^4 mod p = 9
+
+    Envia a cifracao (\sigma, \delta) = (16, 9).
+

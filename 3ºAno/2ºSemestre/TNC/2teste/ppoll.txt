@@ -1,0 +1,21 @@
+PERGUNTA:
+
+Use o algoritmo de fatorizacao p-pollard para encontrar um fator nao trivial de n = 143,
+usando a sucessao pseudo-aleatoria dada por x_0 = 2 e f(x) = x^2 + 1.
+
+RESPOSTA:
+
+F(x) = x^2 + 1
+n = 143
+x_0 = 2
+
+x_1 \equiv f(x_0) = 5 mod 143
+x_2 \equiv f(x_1) = 26 mod 143
+x_3 \equiv f(x_2) = 105 mod 143
+x_4 \equiv f(x_3) = 15 mod 143
+
+
+mdc(x_2 - x_1, n) = 1
+mdc(x_4 - x_2, n) = 11
+
+Logo, o fator nao trivial de n e 17.

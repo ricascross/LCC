@@ -1,0 +1,19 @@
+QUESTAO:
+Seja p um primo impar e a tal que (a/p) = 1. Mostre que ind_r a modulo p e par, onde r e uma raiz primitiva de p.
+
+
+RESPOSTA:
+Pelas propriedades do simbolo de Legendre sabemos que 
+(a/p) = 1 se a  e um residuo quadratico.
+
+
+supondo
+ind_r a par
+
+a = r^{ind_r a} (mod p=
+=>
+(r^{(ind_r a)/2})^2 \equiv a (mod p)
+
+Logo existe x (basta tomar x = r^{(ind_r a)/2}) tal que x^2 \equiv a (mod p)
+
+Ou seja, a e residuo quadratico.
