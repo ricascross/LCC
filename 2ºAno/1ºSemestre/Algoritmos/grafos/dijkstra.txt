@@ -1,0 +1,46 @@
+
+
+
+#define V 7
+typedef struct a {
+    int dest, peso;
+    struct a *prox;
+}*LAdj;
+
+typedef LAdj Grafo[V];
+
+//T(V,E) = A+B*V+C*V+D*(V-1)+(E-V-1)*F
+int dijkstraSP(Grafo g, int o, int d){
+    int orla[V], tam, cor[V];//0:n vis, 1:orla, 2-vis
+    int custo[V];
+    int i, r=0;
+    LAdj aux;
+    for(i=0; i<V;i++){
+        cor[i] =0;
+    }
+    orla[0] = o;// A
+    cor[o] = 1;
+    custo[o] = 0;
+    tam=1;
+    while(tam>0){
+        c=//menor elemento da orla   B
+        //retirar "o" da orla;   C
+        tam--;
+        cor[c] = 2;
+        if(c==d) return(custo[c]);
+        for(aux=g[c]; aux!=NULL; aux=aux->prox){
+            if(cor[aux->dest]==0){
+                cor[aux->dest] = 1;
+                custo[aux->dest] = custo[c] + aux->peso;
+                //acrescentar à orla    D
+                tam++;
+            } else if(cor[aux->dest]=1 && custo[aux->dest]>custo[c]+aux->peso){
+                custo[aux->dest] = custo[c]+aux->peso;
+                //atualizar a orla e meter cor[aux->dest] a visitado   F
+                r = custo[aux->dest];
+            }
+        }
+    }
+    return r;
+    
+}

@@ -1,0 +1,54 @@
+
+
+
+#define V 7
+typedef struct a {
+    int dest, peso;
+    struct a *prox;
+}*LAdj;
+
+//ordenação topológica
+//return 0: sucesso 
+int ordTop(Grafo g, int ord[]){
+    int i, inD[V], q[V], ini, fim, x;
+    struct a *aux;
+    
+    for(i=0;i<V;inD[i++]=0);
+
+    for(i=0;i<V;i++){
+        for(aux=g[i];aux!=NULL;aux=aux->prox){
+            //i=aux->dest
+            inD[aux->dest]++;
+        }
+    }
+    ini=fim=0;
+    for(i=0;i<V;i++){
+        if(inD[i]==0){
+            q[fim++]=i;
+        }
+    }
+    while(ini<fim){
+        x=q[ini++];
+        ord[i++]=x;
+        for(aux=g[x]; aux!=NULL;aux=aux->prox){
+            inD[aux->dest] --;
+            if(inD[aux->dest]==0) q[fim++] = aux->dest;
+        }
+    }
+    return(i!=V);
+}
+
+
+int topOk(Grafo g, int ord[]){
+    int i;
+    struct a *aux;
+    int ord2[V];
+    for(i=0;i<V;ord2[ord[i++]]=i);
+    for(i=0;i<V;i++){
+        for(aux=g[i];aux!=NULL;aux=aux->prox){
+            //i=aux->dest
+            if(ord2[i]>ord2[aux->dest]) return 0;
+        }
+    }
+    return 1;
+}

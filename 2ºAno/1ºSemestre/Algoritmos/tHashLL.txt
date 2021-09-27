@@ -1,0 +1,70 @@
+
+
+
+typedef struct lista {
+    int chave;
+    struct lista *prox;
+} *Lista; 
+
+typedef struct thash {
+    int tam;
+    struct lista *valores;
+} *THash;
+
+int hash (int chave, int tam){
+    return (chave%tam)
+}
+
+THash* init(T int tam){
+    int i;
+    THash *h = malloc(sizeof(struct thash));
+    h->tam = tam;
+    h->valores = malloc(h->tam*sizeof(struct lista));
+    for (i=0; i<h->tam; h->valores[i++] = NULL);
+    return h;
+}
+
+Lista* redim (Lista *old, int old_tam, int new_tam){
+    Lista new = malloc(new_tam*sizeof(struct lista));
+    Lista aux;
+    Lista aux2 = NULL;
+    int i, ch;
+    for (i=0; i<new_tam; new[i++] = NULL);
+    for (i=0; i<old_tam;i++){
+        for (aux= old[i]; aux != NULL; aux = aux2){
+            ch = hash(old[i]->chave, new_tam);
+            aux2=aux->prox;
+            aux[ch]->prox = new[ch];
+            new[ch] = aux;
+        }
+    }
+    free(old);
+    return new;
+}
+
+int add (THash *h, int chave){
+    //return 0 -> foi adicionado
+    //return 1 -> já estava na tabela
+    int ch;
+    struct thash *aux;
+    //ver se a tabela está cheia
+    for (i = 0; i<h->tam && h!=NULL;i++);
+    if (h!=NULL && i == h->tam){
+        h->valores = redim(h->valores, h->tam, 2*h->tam);
+        h->tam = 2*h->tam;
+    }
+    ch = hash(chave, h->tam);
+    aux->valores = h->valores[ch];
+    while(aux!=NULL && aux->valores[ch].chave != chave){
+        ch = (ch+1)%(h->tam)
+    }
+
+    //se a chave for igual retorna que já foi encontrado
+    if(aux->valores[ch].chave == chave) return 1;
+    else { //se for NULL então tem de se adicionar a chave
+        aux->valores[ch].chave = chave;
+        aux->prox = h[ch];
+        h[ch] = aux;
+    }
+    return 0;
+}

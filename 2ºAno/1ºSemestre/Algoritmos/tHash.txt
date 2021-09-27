@@ -1,0 +1,89 @@
+
+
+
+#define Livre 0
+#define Ocup 1
+#define Apag 2
+
+struct entry {
+    int chave;
+    int status;
+}
+
+typedef struct thash {
+    int ocup, apag, tam;
+    struct entry *valores;
+    
+} *THash
+
+THash *new (int tam){
+    THash *r;
+    int i;
+    r = malloc(sizeof(struct thash));
+    r->ocup = 0;
+    r->apag = 0;
+    r->tam = tam;
+    r->valores = malloc(tam*sizeof(struct entry));
+    for (i=0; i < tam; r->valores[i++].status = Livre);
+    return r;
+} 
+
+
+struct entry *redim(struct entry *old, int old_tam, int new_tam){
+    int i, j;
+    struct entry *new = malloc(new_tam*sizeof(struct entry));
+    for (i=0; i < new_tam; new[i++].status = Livre);
+    for(i=0; i< tam; i++){
+        if (old[i].status == Ocup){
+            j = hash(old.chave, new_tam);
+            while(new[j].status != Livre) j=(j+1)/new_tam;
+            new[j].chave = old[i].chave;
+            new[j].status = Ocup;
+        }
+    }
+    free(old);
+    return new;
+}
+
+int add(THash *t, int chave) {
+    int ch, r =0;
+    if (t->ocup == r->tam){ //se está tudo ocupado, então redimensiona-se
+        t->valores = redim(t->valores, t->tam, t->tam*2);
+        t->tam = tam*2;
+        t->apag = 0;
+    }
+    ch = hash(chave, t->tam);
+    while(t->valores[ch].status == Ocup && t->valores[ch].chave != chave){
+        ch = (ch+1) / t->tam;
+    }
+    if (t->valores[ch].status == Livre) {
+        t->valore[ch].status = Ocup;
+        t->valores[ch].chave = chave;
+        t->ocup++;
+    }
+    else if (t->valores[ch].chave == chave){
+        if(t->valores[ch].status == Ocup) r=1;
+        else{
+            t->valores[ch].status = Ocup;
+            t->ocup++;
+            t->apag--;
+        }
+    else {
+        t->valores[ch].status = Ocup;
+        t->valores[ch].chave = chave;
+        t->ocup++;
+        t->apag++;
+    }
+    }
+    return r;
+}
+
+int elem(Thash *t, int chave){
+    int ch, cont = t->tam;
+    ch = hash(chave, t->tam);
+    while (t->valores[ch].chave != chave && t->valores[ch].status != Livre && cont >0){
+        ch = (ch+1)/t->tam;
+        cont--;
+    }
+    return(t->valores[ch].chave==chave && t->valores[ch].status==Ocup);
+}

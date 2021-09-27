@@ -1,0 +1,6 @@
+Z3 = SMT Solver (System Module Theory) 
+	. F satisfazível (SAT) sse existir uma valoração que torne F verdadeira
+	. F válida (VAL) sse toda a valoração que torna F verdade
+	
+
+A1,..,AN |= B sse {A1,..,An, Not(B)} é unsat

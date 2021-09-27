@@ -1,0 +1,13 @@
+
+
+
+void heapSort(int v[], int N){
+    int i,j;
+    for(i=1;i<N;i++){
+        bubbleUp(v,i);
+    }
+    for(j=N-1; j>0; j--){
+        swap(v,0,i);
+        bubbleDown(v, i-1);
+    }
+}

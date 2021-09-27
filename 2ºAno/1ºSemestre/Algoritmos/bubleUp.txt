@@ -1,0 +1,13 @@
+
+
+
+void bubleUp(int h[], int N){
+    int i, j;
+    i=N;
+    j=(N-1)/2;
+    while(i>0 && h[i] < h[j]){
+        swap(h,i,j);
+        i=j;
+        j=(i-1)/2;
+    }
+}

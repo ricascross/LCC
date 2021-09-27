@@ -1,0 +1,66 @@
+
+
+
+typedef struct aresta {
+    int dest, peso;
+    struct aresta *prox;
+} *GLista[V];
+
+
+//T(V,E) = V+(V+E)= teta(V+E)
+void invert(GLista a, GLista b){
+    struct aresta *aux, *t;
+    int i;
+    for(i=0;i<V;i++) b[i]=NULL;
+    for(i=0;i<V;i++){
+        for(aux=g[i];aux!=NULL; aux=aux->prox){
+            t= malloc(sizeof(struct aresta));
+            t->dest = i;
+            t->peso = aux->peso;
+            t->prox = b[aux->dest];
+            b[aux->dest] = t;
+        }
+    }
+}
+
+
+//dado uma origem, subtrair o número de entradas ao número de saídas
+//T(V,E) = (V+E) + V = O(V+E)
+int capacidade(GLista g, int o){
+    struct aresta *aux;
+    int i, entradas=saidas=0;
+    for(i=0; i<V; i++){
+        for(aux=g[i]; aux!=NULL; aux=aux->dest){
+            if(aux->peso != 0){
+                entradas += aux->peso;
+                break;
+            }
+        }
+    }
+    for(aux = g[o], aux!=NULL; aux = aux->prox){
+        saidas += aux->peso;
+    }
+
+    return (entradas-saidas);
+}
+
+//T(V,E)= teta(V)+O(V+E)+teta(V)= 3V+E= O(V+E)
+int maxCapacidade(GLista g){
+    int cap[v];
+    int i, r;
+    struct aresta *aux;
+    for(i=0; i<V; cap[i++]=0);
+    for(i=0; i<V; i++){
+        for(aux=g[i]; aux!=NULL; aux=aux->prox){
+            cap[i] -= aux->peso;
+            cap[aux->dest] += aux->peso;
+        }
+    }
+    for(r=0; i=0; i<V; i++){
+        if(cap[r]<cap[i]){
+            r = i;
+        }
+    }
+    return r;
+}
+

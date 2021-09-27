@@ -1,0 +1,36 @@
+
+
+
+#define V 7
+
+typedef struct a {
+    int dest;
+    struct a *prox;
+}*LAdj;
+
+typedef LAdj Grafo[V];
+
+int travessiaBF(Grafo g, int o, int vis[], int pais[]){
+    LAdj aux ;
+    int q[V];
+    int ini,fim, i, x, r=0;
+    for(i=0; i<V; i++){
+        vis[i] =0;
+        pais[i]=-1;
+    }
+    ini=fim=0;
+    q[fim] = o;
+    while(inicio != fim){
+        r++;
+        x=q[fim++];
+        v[x]=1;
+        for (aux=g[x]; aux!=NULL; aux=aux->prox){
+            if(v[aux->dest]==0){
+                q[fim++]=aux->dest;
+                pais[aux->dest] = x;
+            }
+        }   
+    }
+    
+    return r;
+}

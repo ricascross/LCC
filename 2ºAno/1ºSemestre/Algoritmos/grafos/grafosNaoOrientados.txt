@@ -1,0 +1,131 @@
+
+
+
+#define V 7
+typedef struct a {
+    int dest, peso;
+    struct a *prox;
+}*LAdj;
+
+typedef LAdj Grafo[V];
+
+//calcular o tamanho da componente ligada
+//a que x pertence no grafo G
+//T(V,E) = teta(V)+O(V+E) = O(V+E)
+int tamCL(Grafo g, int o){
+    int vis[V];
+    int i;
+    for (i=0; i<V; vis[i++]=0);
+    return travDF(g, o, vis);
+}
+
+int travDF(Grafo g, int o, int vis[]){
+    struct a *aux;
+    int r=0;
+    vis[o] = 1;
+    for(aux=g[o];aux!=NULL; aux = aux->dest){
+        if(vis[aux->dest] ==0){
+            r+= travDF(g, aux->dest, vis);
+        }
+    }
+}
+
+
+//tamanho da maior componente ligada
+//T(V,E) = teta(V) + O(V+E) = O(V+E)
+int tamMCLig(Grafo g){
+    int i, r=0;
+    int vis[V], t;
+    for(i=0; i<V;i++) vis[i++] = 0;
+    for(i=0;i<V;i++){
+        if(vis[i]==0){
+            t = travDF(g, i, vis);
+            if(t>r) r=t;
+        }
+    }
+    return r;
+}
+
+
+//Por exemplo: c[0,1,2,0,0,3,2,3,3,3]
+//0está ligado ao 3 e 4
+int componentesLigadas(Grafo g, int c[]){
+    int i, r=0;
+    for(i=0; i<V; i++) c[i]=-1;
+    for(i=0; i<V; i++){
+        if(c[i]<0){
+            travDF2(g, i, c, r++)
+        }
+    }
+    return r;
+}
+
+void travDF2(Grafo g, int o, int vis[], int l){
+    struct a *aux;
+    vis[0] = 1;
+    for(aux = g[o]; aux!=NULL; aux=aux->prox){
+        if(vis[aux->dest] <0){
+            travDF2(g, aux->dest, vis, l);
+        }
+    }
+}
+
+
+
+//devolve menor numero de arestas necessaárias
+//para atingir d, a partir de o
+//return -1 se não for possível;
+int camMA(Grafo g, int o, int d){
+    struct a *aux;
+    int q[V];
+    int ini, fim, i, z;
+    int dist[v], vis[V];
+    for(i=0; i<V; i++){
+        pais[i] = -1;
+        vis[i] = 0;
+    }
+    ini=fim=0;
+    q[fim++] = o;
+    vis[o] =1;
+    dist[o] = 0;
+    while(ini != fim){
+        z=q[ini++];
+        if(z==d) return (dist[z]);
+        for(aux=g[z]; aux!=NULL; aux=aux->prox){
+            if(vis[aux->dest]==0){
+                q[fim++] = aux->dest;
+            }
+            vis[aux->dest] = 1;
+            dist[aux->dest] = dist[z]+1;
+        } 
+    }
+    return dist[d];
+}
+
+//vê se tem ciclos
+//-1:não visitado, 0:orla, 1:visitado;
+int tem_ciclos(Grafo g){
+    int estado[v];
+    int i,r;
+    for(i=0; i<V;i++){
+        estado[i] = -1;
+    }
+    for(i=0; i<V; i++){
+        r=tem_ciclos_Rec(g,i,estado)
+    }
+    return r;
+}
+
+int tem_ciclos_Rec(Grafo g, int o, int estado[]){
+    struct a *aux;
+    int i;
+    estado[o] = 1;
+    for(aux= g[o]; aux!=NULL; aux=aux->prox){
+        if(estado[aux->dest]<0){
+            if(tem_ciclos_Rec(g, aux->dest, estado)) return 1;
+        else if(estado[aux->dest] == 0) return 1;
+        }
+    }
+    estado[o]=2;
+    return 0;
+}

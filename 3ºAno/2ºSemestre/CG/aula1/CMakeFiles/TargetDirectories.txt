@@ -1,0 +1,3 @@
+/Users/ricascross/Desktop/2semestre/CG/code/CMakeFiles/rebuild_cache.dir
+/Users/ricascross/Desktop/2semestre/CG/code/CMakeFiles/edit_cache.dir
+/Users/ricascross/Desktop/2semestre/CG/code/CMakeFiles/class1.dir

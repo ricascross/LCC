@@ -1,0 +1,56 @@
+
+
+
+#define V 7
+
+typedef GMAT[V][V];
+
+typedef struct aresta {
+    int dest;
+    struct aresta *prox;
+} *Glista[V];
+
+
+//transforma uma matriz numa lista
+//T(V,E) = y*V^2 + x*E => (E<=V^2)=> <=y*V^2 +x*V^2  = O(V^2)
+void matLista(GMAT a, Glista b){
+    int i, j;
+    struct aresta *aux;
+    for(i=0; i<V; i++){
+        b[i] = NULL;
+        for(j=V-1;j>=0;j--){
+            if(a[i][j]==1){
+                aux = malloc(sizeof(struct aresta));
+                aux->dest = j;
+                aux->prox = b[j];
+                b[i] = aux;
+            }
+        }
+    }
+}
+
+int aresta(Glista g, int o, int d);
+
+//c[0,1,2] k=3
+//T(V,E) = O(k*V)
+int caminho_OK(Glista g, int c[], int k){
+    int i;
+    for (i=0; i<V; i++){
+        if(aresta(g, c[i],c[i+1])==0) return 0;
+    }
+    return 1;
+}
+
+//T(V,E) = O(V+E)
+int color_Ok(Glista g, int cores[]){
+    struct aresta * aux;
+    int i;
+    for(i=0; i<V;i++){
+        for(aux=g[i]; aux!=NULL;aux=aux->prox){
+            if(cores[i] == cores[x->dest]){
+                return 0;
+            }
+        }
+    }
+    return 1;
+}

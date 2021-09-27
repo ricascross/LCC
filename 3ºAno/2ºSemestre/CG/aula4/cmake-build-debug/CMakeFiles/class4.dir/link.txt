@@ -1,0 +1,1 @@
+/usr/local/bin/g++-10  -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/class4.dir/main.cpp.o  -o class4  -framework OpenGL -framework OpenGL -framework GLUT -framework Cocoa -framework OpenGL -framework OpenGL -framework GLUT -framework Cocoa 

@@ -1,0 +1,96 @@
+
+
+
+#define V 7
+
+typedef struct a {
+    int dest;
+    struct a *prox;
+}*LAdj;
+
+typedef LAdj Grafo[V];
+
+//return 1: se foi encontrado um destio, caso contrário return 0
+//T(V,E) = O(V)
+int aresta(Grafo G, int o, int d){
+    LAdj aux = g[o];
+    for (aux; aux!=NULL && aux->dest != d; aux=aux->prox);
+    if (aux==NULL) return 0;
+    return 1;
+}
+
+//saber o grau de saída de um dado vértice
+//T(V,E) = O(V)
+int outDegree(Grafo g, int o){
+    LAdj aux = g[o];
+    int r = 0;
+    while(aux!=NULL){
+        r++;
+        aux = aux->prox;
+    }
+    return r;
+}
+
+//quantas arestas tem como destino um dado vértice
+//T(V,E) = O(V+E)
+int inDegree(Grafo g, int o){
+    LAdj aux = g[o];
+    int r = 0;
+    int i;
+    for(i=0; i<V;i++){
+        for (aux; aux!=NULL; aux = aux->prox){
+            if (aux->dest == o){
+                r++;
+                break;
+            }
+        }
+    }
+    return r;
+}
+
+//procura se existe ligação de o para d
+//T(V,E) = O(V+E)
+int procura(Grafo g, int o, int d){
+    int vis[V];
+    int i;
+    for (i=0; i<V; vis[i++]=0);
+    return procura_Rec(g,o,d,vis);
+}
+//return 1: se foi encontrado; return 0: se não foi
+int procura_Rec(Grafo g, int o, int d, int vis[]){
+    LAdj aux = g[o];
+    if(o == d) return 1;
+    vis[o] = 1;
+    for (aux; aux!=NULL; aux = aux->prox){
+        if(vis[aux->dest] == 0){
+            procura(g, aux->dest, d, vis);
+        }
+    }
+    return 0;
+}
+
+//quantos sao os vértices adjacentes a um dado vértice
+int quantos(Grafo g, int o){
+    int vis[V];
+    int i;
+    for (i=0; i<V;vis[i++]=0);
+    return (quantos_Rec(g, o, vis));
+}
+
+int quantos_Rec(Grafo g, int o, int vis[]){
+    LAdj aux= g[o];
+    vis[o]==1;
+    int r=0;
+    for(aux; aux!=NULL; aux = aux=aux->prox){
+        if (vis[aux->dest]==0){
+            r=r+1+quantos_Rec(g, aux->dest, vis);
+        }
+    }
+    return r;
+}
+
+//quais os vértices que são alcançáveis a partir de outro
+int alcancaveis(Grafo g, int o, int vis[]){
+    for (i=0; i<V; vis[i++]=0);
+    return(quantos_Rec(g, o, vis));
+}

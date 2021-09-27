@@ -1,0 +1,36 @@
+
+
+
+#define MAX 10
+
+typedef struct lista {
+    int chave;
+    struct lista *prox;
+} *Lista;
+
+typedef Lista THASH[MAX];
+
+int hash(int chave, int tam){
+    return (chave%tam);
+}
+
+void init(){
+    int i;
+    for (i=0; i<MAX; i++) THASH[i] = NULL;
+}
+
+int add(THASH h, int chave){
+    int ch;
+    Lista *aux = malloc(sizeof(struct lista));
+    ch = hash(chave, MAX);
+    aux = h[ch];
+    while(aux != NULL && aux->chave != chave){
+        aux = aux->prox;
+    }
+    if (aux->chave == chave) return 1;
+    else {
+        aux->chave = chave;
+        aux->prox = h[ch];
+        h[ch] = aux;
+    }
+}

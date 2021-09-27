@@ -1,0 +1,85 @@
+
+
+
+typedef struct avl {
+    int bal; // -1: inclinada para a direira; 0: bal; 1:inc para a esquerda
+    int valor;
+    struct avl *esq, *dir;
+} *AVL;
+
+AVL rotacaoEsq(AVL a){
+    AVL b;
+    b = a->dir;
+    a->dir = b->esq;
+    b->esq = a;
+    return b;
+}
+
+AVL rotacaoDir(AVL b){
+    AVL a;
+    a = b->esq;
+    b->esq = a->dir;
+    a->dir = b;
+    return a; 
+}
+
+AVL corrigeE(AVL a){
+    if(a->esq->bal == 1){
+        a = rotacaoDir(a);
+        a->bal = 0;
+        a->dir->bal =0;
+    } else {
+        a->esq =rotacaoEsq(a);
+        a = rotacaoDir(a);
+        if(a->bal==0) // é preciso acabar
+    }
+}
+
+AVL insereAux(AVL a, int valor, int *aum){
+    //insere o valor no a
+    //aum serve para saber se está balanceada ou não
+    //guarda no endereço: 1: aumentou; 0: não aumentou;
+    if (a==NULL) {
+        a = malloc(sizeof(struct avl));
+        a->bal = 0;
+        a->valor = valor;
+        a->esq = a->dir = NULL;
+        *aum = 1;
+    }
+    else if(a->valor < valor){
+        a->esq = insereAUX(a->esq, valor, aum);
+        if(aum ==1){
+            if (a->bal==-1){ // bal para a direita
+                a->bal = 0;
+                *aum = 0;
+            } else if( a->bal == 0){
+                a->bal = 1;
+                *aum = 1;
+            }else {
+                a = corrigeE(a);
+                *aum = 0;
+            }
+        }
+    }
+    else{
+        a->dir = insereAUX(a->dir, valor, aum);
+        if(aum ==1){
+            if (a->bal==-1){ // bal para a direita
+                a = corrigeE(a);
+                *aum = 0;
+            } else if( a->bal == 0){
+                a->bal = 1;
+                *aum = 1;
+            }else {
+                a->bal = 0;
+                *aum = 0;
+            }
+        }
+    }
+    return a;
+}
+
+AVL insere (AVL a, int valor){
+    int aum; //diz se aumentou
+    return(insereAUX(a, valor, &aum));
+}

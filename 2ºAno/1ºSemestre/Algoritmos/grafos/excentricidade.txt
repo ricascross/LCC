@@ -1,0 +1,50 @@
+
+
+
+#define V 7
+typedef struct a {
+    int dest, peso;
+    struct a *prox;
+}*LAdj;
+
+typedef LAdj Grafo[V];
+
+
+//dado um grafo e um vértice, diz
+//qual o caminho mais longe
+int excentricidade(Grafo g, int x){
+    int pesos[V], pais[V];
+    int i, r;
+    dijkstraSP(g,x,pais,pesos);
+    r=pesos[0];
+    for(i=1;i<V;i++){
+        if(pesos[i]>r) r= pesos[i];
+    }
+    return r;
+}
+
+
+//maior caminho dos menores caminhos
+int diametro(Grafo g){
+    int i,t, r=0;
+    for(i=0;i<V;i++){
+        t=excentricidade(g,i);
+        if(t>r) r=t;
+    }
+    return r;
+}
+
+
+//menor caminho dos menores caminhos
+int centro(Grafo g){
+    int i,t, r=0;
+    int er=excentricidade(g,0);
+    for(i=1; i<V;i++){
+        t = excentricidade(g,i);
+        if(t>er){
+            r=i;
+            er=t;
+        }
+        return r;
+    }
+}

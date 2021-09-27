@@ -1,0 +1,42 @@
+
+
+
+#define V 7
+typedef struct a {
+    int dest, peso;
+    struct a *prox;
+}*LAdj;
+
+typedef LAdj Grafo[V];
+
+int dikjkstra(Grafo g, int o, int pais[], int pesos[]){
+    int cores[V];//0: n vis, 1: orla, 2:vis
+    int i, tam,x;
+    struct a *aux;
+    for(i=0; i<V; cores[i++] = 0);
+    //acrescentar à orla
+    cores[0] = 1;
+    pesos[o] = 0;
+    pais[o]=-1;
+    tam=1;
+    while(tam>0){
+        x //=menor elemento da orla(menor peso)
+        //retirar x da orla
+        tam--;
+        cores[x]= 2;
+        for(aux=g[x]; aux!=NULL;aux=aux->prox){
+            x = aux->dest
+            if (cores[aux->dest] == 0){
+                //acrescentar aux->dest à orla
+                pesos[aux->dest] = pesos[x] + aux->peso;
+                pais[aux->dest] = x;
+                cores[aux->dest] = 1;
+            } else if(cores[aux->dest]==1 && pesos[x]+aux->peso > pesos[aux->dest]){
+                pesos[aux->dest] = pesos[x] + aux->peso;
+                pais[aux->dest] = x;
+                //atuaçizar a orla e meter cores a cisitado;
+            }
+        }
+    }
+    return r;
+}

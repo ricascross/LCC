@@ -1,0 +1,19 @@
+
+
+
+void bubbleDown(int h[], int N) {
+    int i =0;
+    int j;
+    while(2*i+2<N){
+        if (h[2*i+1] < h[2*i+2]){
+            j = 2*i+1;
+        } else {
+            j = 2*i+2;
+        }
+        if(h[i] < h[j]) return;
+        else{
+            swap(h,i,j);
+            i=j;
+        }
+    }
+}
