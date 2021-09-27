@@ -1,14 +1,30 @@
-function x=GaussElim (A,b)
-% resolve o sistema Ax=b pelo metodo de eliminaçao de Gauss sem pivotaçao
-% usa a function STriangular que implementa o metodo de substituicao
-% inversa para matrizes triangulares superiores;
-n=length(b);
-for k=1:n-1  
-    for i=k+1:n
-        m=A(i,k)/A(k,k);        
-        A(i,k:n)=A(i,k:n)-m*A(k,k:n); 
-        b(i)=b(i)-m*b(k);
-    end
-end
-x=STriangular(A,b);
+## Copyright (C) 2019 Ricascross
+## 
+## This program is free software; you can redistribute it and/or modify it
+## under the terms of the GNU General Public License as published by
+## the Free Software Foundation; either version 3 of the License, or
+## (at your option) any later version.
+## 
+## This program is distributed in the hope that it will be useful,
+## but WITHOUT ANY WARRANTY; without even the implied warranty of
+## MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+## GNU General Public License for more details.
+## 
+## You should have received a copy of the GNU General Public License
+## along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+## -*- texinfo -*- 
+## @deftypefn {} {@var{retval} =} GaussElim (@var{input1}, @var{input2})
+##
+## @seealso{}
+## @end deftypefn
+
+## Author: Ricascross <ricascross@ricascross>
+## Created: 2019-12-02
+
+function x = GaussElim (A, b)
+  
+  [A b] = Gauss (A, b);
+  x = STriangular (A,b);
+
+endfunction

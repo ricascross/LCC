@@ -1,0 +1,5 @@
+18
+biblia 20 2
+microondas 150 10
+televisao 200 15
+torradeira 40 3

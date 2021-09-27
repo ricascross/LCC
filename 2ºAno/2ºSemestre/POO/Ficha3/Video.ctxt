@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=Video
+comment1.params=
+comment1.target=Video()
+comment2.params=nome\ conteudo\ dataCarr\ resolucao\ duracao\ comentarios\ numCom\ likes\ dislikes
+comment2.target=Video(java.lang.String,\ byte[],\ java.time.LocalDateTime,\ int,\ java.time.LocalTime,\ java.lang.String[],\ int,\ int,\ int)
+numComments=3

@@ -1,0 +1,5 @@
+10
+microondas 30 6
+jarra 14 3
+giradiscos 16 4
+radio 9 2

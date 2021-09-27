@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=FBFeed
+comment1.params=
+comment1.target=FBFeed()
+comment2.params=p
+comment2.target=void\ addPost(FBPost)
+comment3.params=user
+comment3.target=int\ nrPosts(java.lang.String)
+comment3.text=\n\ metodos\n
+comment4.params=user
+comment4.target=int\ nrPosts2(java.lang.String)
+comment5.params=user
+comment5.target=java.util.List\ postsOf(java.lang.String)
+comment6.params=id
+comment6.target=FBPost\ getPost(int)
+numComments=7

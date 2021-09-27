@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=NaoExisteHotel
+comment0.text=\n\ Write\ a\ description\ of\ class\ NaoExisteHotel\ here.\n\n\ @author\ (your\ name)\n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=
+comment1.target=NaoExisteHotel()
+comment2.params=msg
+comment2.target=NaoExisteHotel(java.lang.String)
+numComments=3

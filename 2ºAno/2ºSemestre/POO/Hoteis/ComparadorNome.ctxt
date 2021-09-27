@@ -1,0 +1,5 @@
+#BlueJ class context
+comment0.target=ComparadorNome
+comment1.params=h1\ h2
+comment1.target=int\ compare(Hotel,\ Hotel)
+numComments=2
